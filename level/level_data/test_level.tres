@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://d2do2ve02wdfl"]
+
+[ext_resource type="Script" uid="uid://b4lopqu14nk7" path="res://level/level_data/level_data.gd" id="1_m4cgh"]
+[ext_resource type="AudioStream" uid="uid://dgg53m36ep0oy" path="res://level/music/test.mp3" id="2_t3r0c"]
+
+[resource]
+script = ExtResource("1_m4cgh")
+song = ExtResource("2_t3r0c")
+bpm = 115
+first_note_time = 0.0
+metadata/_custom_type_script = "uid://b4lopqu14nk7"
