@@ -18,6 +18,12 @@ config/icon="res://icon.svg"
 
 BeatSync="*res://level/music/beat_sync/beat_sync.tscn"
 
+[file_customization]
+
+folder_colors={
+"res://components/": "blue"
+}
+
 [input]
 
 move_up={
