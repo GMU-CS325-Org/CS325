@@ -1,4 +1,4 @@
-extends Area2D
+class_name Bullet extends Area2D
 
 var lol : int = -1
 

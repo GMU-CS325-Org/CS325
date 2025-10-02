@@ -24,6 +24,7 @@ func beat():
 	if not bullet_volleys.has(age):
 		return
 	
+	bullet_volleys.get(age).fire()
 	
 	
 	age+=1

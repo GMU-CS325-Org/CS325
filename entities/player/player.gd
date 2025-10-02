@@ -1,5 +1,6 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
+static var instance : Player
 
 @export_subgroup("Movement")
 @export var speed : float = 300.0
@@ -15,6 +16,7 @@ var action_taken : Array[bool] = [false,false]
 		#boost_time = 0
 
 func _ready() -> void:
+	instance = self
 	BeatSync.quarter_beat.connect(_quarter_beat)
 	BeatSync.eighth_beat.connect(_eighth_beat)
 	BeatSync.sixteenth_beat.connect(_reset_beat)
