@@ -1,16 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpunhsi3rwh0u"]
+[gd_scene load_steps=5 format=3 uid="uid://bpunhsi3rwh0u"]
 
 [ext_resource type="Script" uid="uid://buknw0j74r3ak" path="res://entities/bullet_spawner/bullet.gd" id="1_63152"]
 [ext_resource type="Texture2D" uid="uid://vi8b4yxy6ghe" path="res://sprites/spr_colorless_bullet.png" id="2_uorej"]
+[ext_resource type="PackedScene" uid="uid://007x0lj0h4n0" path="res://components/damage/damage_component.tscn" id="3_uorej"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5rc4h"]
 radius = 9.0
 
-[node name="Area2D" type="Area2D"]
+[node name="Bullet" type="Area2D" node_paths=PackedStringArray("damage_component")]
 script = ExtResource("1_63152")
+damage_component = NodePath("DamageComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_uorej")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5rc4h")
+
+[node name="DamageComponent" parent="." instance=ExtResource("3_uorej")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

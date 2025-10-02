@@ -1,9 +1,13 @@
 extends Area2D
 
 var lol : int = -1
-var speed : float
-var size : float
+
 #color
+
+
+@export var speed : float
+@export var size : float
+@export var damage_component : DamageComponent
 
 func _ready() -> void:
 	BeatSync.quarter_beat.connect(_quarter_beat)
@@ -16,8 +20,10 @@ func _process(delta: float) -> void:
 	#move_local_x(1 * lol)
 	pass
 
-func _on_body_entered(_body) -> void:
-	print("Pichuun!")
+func _on_area_entered(area: Area2D) -> void:
+	if area is HurtboxComponent:
+		var hurtbox : HurtboxComponent = area
+		hurtbox.hit(damage_component)
 
 func _quarter_beat():
 	lol *= -1

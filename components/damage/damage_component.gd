@@ -2,16 +2,16 @@ class_name DamageComponent extends Node
 
 enum Source{
 	PLAYER,
-	ENEMY,
+	ENEMY
 }
 
-enum BulletColor{
+enum DamageColor{
 	WHITE,
 	RED,
-	BLUE,
+	BLUE
 }
 
-@export var damage : int
+
+@export var color : DamageColor
 @export var source : Source
-@export var knockback : float
-@export var stun_time : float
+@export var damage : int
