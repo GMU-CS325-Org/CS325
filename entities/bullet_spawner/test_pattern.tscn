@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlrvn0gjh2u43"]
+
+[ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="1_jyuen"]
+
+[node name="TestPattern" type="Node2D"]
+
+[node name="BulletSpawner" parent="." instance=ExtResource("1_jyuen")]
+position = Vector2(165, 157)
+lifetime = 12
+
+[node name="BulletSpawner2" parent="." instance=ExtResource("1_jyuen")]
+position = Vector2(422, 132)
+lifetime = 24
+beats = [false, true]
+
+[node name="BulletSpawner3" parent="." instance=ExtResource("1_jyuen")]
+position = Vector2(300, 275)
+lifetime = 36
+
+[node name="BulletSpawner4" parent="." instance=ExtResource("1_jyuen")]
+position = Vector2(465, 262)
+lifetime = 24
