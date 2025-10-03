@@ -9,11 +9,18 @@ var lol : int = -1
 @export var size : float
 @export var damage_component : DamageComponent
 
+@export var color_sprites : Array[Texture]
+
 func _ready() -> void:
+	assert(color_sprites.size() == 3, "Missing sprites")
 	BeatSync.quarter_beat.connect(_quarter_beat)
 	BeatSync.eighth_beat.connect(_eighth_beat)
 	#speed = spd
 	#size = sze
+
+func set_color(color : DamageComponent.DamageColor) -> void:
+	damage_component.color = color
+	$Sprite2D.texture = color_sprites[int(color)]
 
 func _physics_process(delta: float) -> void:
 	var movement_vector : Vector2 = direction*speed
