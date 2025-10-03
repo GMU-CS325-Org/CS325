@@ -10,7 +10,7 @@ var time_delay : int
 var current_level : LevelData
 var current_time : float
 
-var current_quarter_crotchets : int:
+var current_quarter_crotchets : int = -1:
 	set(new_val):
 		current_quarter_crotchets = new_val
 		if current_quarter_crotchets % 4 == 0:

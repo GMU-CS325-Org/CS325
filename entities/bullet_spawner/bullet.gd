@@ -4,7 +4,7 @@ var lol : int = -1
 
 #color
 
-
+@export var direction : Vector2
 @export var speed : float
 @export var size : float
 @export var damage_component : DamageComponent
@@ -15,9 +15,10 @@ func _ready() -> void:
 	#speed = spd
 	#size = sze
 
-func _process(delta: float) -> void:
-	#move_local_y(1)
-	#move_local_x(1 * lol)
+func _physics_process(delta: float) -> void:
+	var movement_vector : Vector2 = direction*speed
+	move_local_x(movement_vector.x)
+	move_local_y(movement_vector.y)
 	pass
 
 func _on_area_entered(area: Area2D) -> void:

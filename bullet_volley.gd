@@ -3,7 +3,7 @@ class_name BulletVolley extends Node2D
 
 @export var beat : int ##Beat that this volley gets fired
 
-@export var bullets : Array[Bullet] #The bullets to be fired. Loops through the array if multiple are provided
+@export var bullets : Array[PackedScene] #The bullets to be fired. Loops through the array if multiple are provided
 @export var targeted : bool = false #true if the bullets are aimed at the player, false if not
 @export var quantity : int = 1 #the number of bullets spawned. should set spacing manually if higher than 1
 @export var spacing_degrees : float = 0
@@ -19,6 +19,7 @@ class_name BulletVolley extends Node2D
 #index 0 is the x value. index 1 is the y value
 
 func fire() -> void:
+	print("Firing bullets")
 	var shoot_dir : Vector2
 	
 	if targeted:
@@ -26,8 +27,10 @@ func fire() -> void:
 	else:
 		shoot_dir = Vector2.DOWN
 	
-	var initial_shoot_angle : float 
-	if quantity %2 == 1:
-		initial_shoot_angle = deg_to_rad(-spacing_degrees*(quantity-1))
-	else:
-		initial_shoot_angle = deg_to_rad(-spacing_degrees*0.5-spacing_degrees*(quantity-1))
+	var initial_shoot_angle : float = -spacing_degrees*(quantity-1)*0.5
+	
+	for i in range(0,quantity):
+		var bullet_instance : Bullet = bullets[i%bullets.size()].instantiate()
+		bullet_instance.direction = shoot_dir.rotated(deg_to_rad(initial_shoot_angle+spacing_degrees*i))
+		bullet_instance.speed = speed
+		add_sibling(bullet_instance)

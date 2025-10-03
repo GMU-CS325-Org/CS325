@@ -1,11 +1,16 @@
-extends Node2D
+class_name BulletSpawner extends Node2D
+
+enum StartBeat{
+	QUARTER,
+	EIGHTH,
+	SIXTEENTH,
+}
 
 var age : int = 0 #number of 16th notes the spawner has been active for
 var bullet_volleys : Dictionary[int,BulletVolley]
-var bullet_prefab = preload("res://entities/bullet_spawner/bullet.tscn")
 
 @export var lifetime : int = 0 #number of beats until spawner is removed
-
+@export var start_beat : StartBeat
 
 func _ready() -> void:
 	for node : Node2D in get_children():
@@ -21,43 +26,14 @@ func _ready() -> void:
 	#check if targeted and aim at player if so
 
 func beat():
-	if not bullet_volleys.has(age):
-		return
+	if age == 0:
+		if start_beat == StartBeat.QUARTER && BeatSync.current_quarter_crotchets % 4 != 0:
+			return
+		elif start_beat == StartBeat.EIGHTH && BeatSync.current_quarter_crotchets % 2 != 0:
+			return
+	if bullet_volleys.has(age):
+		bullet_volleys.get(age).fire()
 	
-	bullet_volleys.get(age).fire()
-	
-	
-	age+=1
+	age += 1
 	if (age > lifetime):
 		queue_free()
-
-#func _shoot():
-	#var bullet = bullet_prefab.instantiate()
-	#add_child(bullet)
-#
-#func _beat_skipped():
-	#age += 1
-#
-#func _rest_beat():
-	#if (rests <= 0):
-		#return false
-	#elif (fireno > 0):
-		#fireno -= 1
-		#restno = rests
-		#return false
-	#else:
-		#restno -= 1
-		#if (restno <= 0):
-			#fireno = fire
-		#return true
-#
-#func _alive():
-	#if (lifetime == 0):
-		#pass
-	#else:
-		#age += 1
-	#if (age > lifetime):
-		#rests = 1
-		#restno = 1
-		#fire = 0
-		#fireno = 0
