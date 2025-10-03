@@ -7,6 +7,7 @@ class_name BulletVolley extends Node2D
 @export var color : DamageComponent.DamageColor
 @export var targeted : bool = false #true if the bullets are aimed at the player, false if not
 @export var quantity : int = 1 #the number of bullets spawned. should set spacing manually if higher than 1
+@export var offset_degrees : float
 @export var spacing_degrees : float = 0
 @export var speed : float = 0.0 #the speed the bullet travels
 
@@ -20,13 +21,14 @@ class_name BulletVolley extends Node2D
 #index 0 is the x value. index 1 is the y value
 
 func fire() -> void:
-	print("Firing bullets")
 	var shoot_dir : Vector2
 	
 	if targeted:
 		shoot_dir = self.global_position.direction_to(Player.instance.global_position)
 	else:
 		shoot_dir = Vector2.DOWN
+	
+	shoot_dir = shoot_dir.rotated(deg_to_rad(offset_degrees))
 	
 	var initial_shoot_angle : float = -spacing_degrees*(quantity-1)*0.5
 	

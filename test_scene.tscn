@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ewulbntlwwa7"]
+[gd_scene load_steps=7 format=3 uid="uid://ewulbntlwwa7"]
 
 [ext_resource type="Script" uid="uid://34n6bcwd02wq" path="res://test_scene.gd" id="1_uhqqe"]
+[ext_resource type="Script" uid="uid://bumudl2byvexc" path="res://bullet_container.gd" id="2_7cbxl"]
 [ext_resource type="PackedScene" uid="uid://kiekkvdi5uqo" path="res://entities/player/player.tscn" id="2_ia1lp"]
 [ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="3_sasra"]
 [ext_resource type="PackedScene" uid="uid://b1r6l7hm2ggci" path="res://entities/bullet_spawner/bullet_volley.tscn" id="4_2nij2"]
@@ -8,6 +9,9 @@
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_uhqqe")
+
+[node name="BulletContainer" type="Node2D" parent="." groups=["bullet_container"]]
+script = ExtResource("2_7cbxl")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 468.0
@@ -18,21 +22,43 @@ offset_bottom = 363.0
 [node name="Player" parent="." instance=ExtResource("2_ia1lp")]
 
 [node name="BulletSpawner" parent="." instance=ExtResource("3_sasra")]
-position = Vector2(864, 47)
+position = Vector2(590, 31)
 lifetime = 64
 
 [node name="BulletVolley" parent="BulletSpawner" instance=ExtResource("4_2nij2")]
 bullet_prefab = ExtResource("5_7cbxl")
-quantity = 3
-spacing_degrees = 15.0
+quantity = 9
+spacing_degrees = 30.0
 speed = 3.0
 
 [node name="BulletVolley2" parent="BulletSpawner" instance=ExtResource("4_2nij2")]
+beat = 4
 bullet_prefab = ExtResource("5_7cbxl")
-color = 1
-targeted = true
-quantity = 4
-spacing_degrees = 15.0
+quantity = 10
+spacing_degrees = 30.0
 speed = 3.0
 
+[node name="BulletVolley3" parent="BulletSpawner" instance=ExtResource("4_2nij2")]
+beat = 8
+bullet_prefab = ExtResource("5_7cbxl")
+quantity = 9
+spacing_degrees = 30.0
+speed = 3.0
+
+[node name="BulletVolley4" parent="BulletSpawner" instance=ExtResource("4_2nij2")]
+beat = 12
+bullet_prefab = ExtResource("5_7cbxl")
+quantity = 10
+spacing_degrees = 30.0
+speed = 3.0
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 375.0
+offset_top = 499.0
+offset_right = 702.0
+offset_bottom = 515.0
+min_value = -100000.0
+max_value = 100000.0
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
