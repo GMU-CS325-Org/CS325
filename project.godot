@@ -21,7 +21,12 @@ BeatSync="*res://level/music/beat_sync/beat_sync.tscn"
 [file_customization]
 
 folder_colors={
-"res://components/": "blue"
+"res://components/": "blue",
+"res://entities/": "red",
+"res://level/": "green",
+"res://settings/": "gray",
+"res://sprites/": "yellow",
+"res://ui/": "purple"
 }
 
 [input]
