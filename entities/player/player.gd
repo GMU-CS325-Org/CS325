@@ -1,5 +1,6 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
+static var instance : Player
 
 @export_subgroup("Movement")
 @export var speed : float = 300.0
@@ -8,16 +9,23 @@ extends CharacterBody2D
 
 var boost_time : float = -1;
 
-var action_taken : Array[bool] = [false,false]
+
 
 #func _input(event: InputEvent) -> void:
 	#if event.is_action_pressed("boost") and boost_time < 0:
 		#boost_time = 0
 
+	
 func _ready() -> void:
+	instance = self
 	BeatSync.quarter_beat.connect(_quarter_beat)
-	BeatSync.eighth_beat.connect(_eighth_beat)
-	BeatSync.sixteenth_beat.connect(_reset_beat)
+
+func _quarter_beat() -> void:
+	$Sprite2D.scale = Vector2(0.6,0.6)
+	boost_time = 0
+	await get_tree().create_timer(0.1).timeout
+	$Sprite2D.scale = Vector2(0.5,0.5)
+
 
 
 func _physics_process(delta: float) -> void:
@@ -32,26 +40,3 @@ func _physics_process(delta: float) -> void:
 	velocity = direction*total_speed
 	#print(total_speed)
 	move_and_slide()
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("primary_fire"):
-		if not action_taken[0] && BeatSync.current_quarter_crotchets%4 == 0:
-			print("Good")
-			action_taken[0] = true
-		elif action_taken[0]:
-			print("bad (action taken)")
-		elif BeatSync.current_quarter_crotchets%4 == 3:
-			print("bad (too early)")
-		else:
-			print("bad (too late)")
-
-func _reset_beat() -> void:
-	action_taken[0] = false
-	action_taken[1] = false
-
-func _quarter_beat() -> void:
-	$Sprite2D.scale = Vector2(0.6,0.6)
-	boost_time = 0
-
-func _eighth_beat() -> void:
-	$Sprite2D.scale = Vector2(0.5,0.5)
