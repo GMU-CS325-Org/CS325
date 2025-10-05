@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnky1p56jka1p"]
+
+[ext_resource type="Script" uid="uid://du8wu7ynhreba" path="res://entities/player/weapons/player_weapons.gd" id="1_b66g0"]
+[ext_resource type="Script" uid="uid://dbmkrehfiy60g" path="res://entities/player/weapons/picktol.gd" id="2_234d4"]
+[ext_resource type="PackedScene" uid="uid://d1kpkif2jrhj7" path="res://entities/bullets/player/player_bullet.tscn" id="3_234d4"]
+
+[node name="PlayerWeapons" type="Node2D"]
+script = ExtResource("1_b66g0")
+
+[node name="Picktol" type="Node2D" parent="."]
+script = ExtResource("2_234d4")
+bullet = ExtResource("3_234d4")
