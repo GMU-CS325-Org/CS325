@@ -9,4 +9,4 @@ func _on_button_pressed() -> void:
 
 
 func _on_h_slider_drag_ended(value_changed: bool) -> void:
-	Settings.manual_audio_offset = $HSlider.value
+	GameSettings.manual_audio_offset = $HSlider.value

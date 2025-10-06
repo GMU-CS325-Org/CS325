@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 
 
 func _update_time() -> void:
-	var time = (Time.get_ticks_usec() - start_time + Settings.manual_audio_offset) / 1000000.0
+	var time = (Time.get_ticks_usec() - start_time + GameSettings.manual_audio_offset) / 1000000.0
 	time -= current_level.first_note_time + time_delay
 	current_time = max(0, time)
 	
