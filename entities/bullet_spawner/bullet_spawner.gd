@@ -6,6 +6,7 @@ var bullet_volley_groups : Dictionary[int,BulletVolleyGroup]
 
 @export var lifetime : int = 0 #number of beats until spawner is removed
 @export var start_beat : BeatSync.Note
+@export var looping : bool
 
 func _ready() -> void:
 	for node : Node2D in get_children():
