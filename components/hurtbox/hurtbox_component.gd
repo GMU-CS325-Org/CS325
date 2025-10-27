@@ -12,10 +12,13 @@ func _ready() -> void:
 
 
 func hit(damage_component: DamageComponent) -> void:
+	print(damage_component.damage)
 	if allowed_damage_sources.has(damage_component.source):
 		if damage_component.source == DamageComponent.Source.ENEMY:
-			health_component.hurt(damage_component.damage)
-		elif damage_component.source == DamageComponent.Source.PLAYER:
 			if not allowed_damage_colors.has(damage_component.color):
 				return
+			
+			health_component.hurt(damage_component.damage)
+		elif damage_component.source == DamageComponent.Source.PLAYER:
+			print("hit enemy")
 			health_component.hurt(damage_component.damage)
