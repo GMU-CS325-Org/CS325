@@ -1,5 +1,6 @@
 class_name BulletVolley extends Node2D
 
+@onready var bullet_container : Node2D = BulletContainer.instance
 
 @export var beat : int ##Beat that this volley gets fired
 
@@ -37,4 +38,5 @@ func fire() -> void:
 		bullet_instance.set_color(color)
 		bullet_instance.direction = shoot_dir.rotated(deg_to_rad(initial_shoot_angle+spacing_degrees*i))
 		bullet_instance.speed = speed
-		add_sibling(bullet_instance)
+		bullet_container.add_sibling(bullet_instance)
+		bullet_instance.global_position = global_position

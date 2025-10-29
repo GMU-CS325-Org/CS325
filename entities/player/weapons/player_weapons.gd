@@ -16,5 +16,11 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("primary_fire"):
 		selected_gun.primary_fire()
-	elif event.is_action_pressed("secondary_fire"):
+		return
+	
+	if event.is_action_pressed("secondary_fire"):
 		selected_gun.secondary_fire()
+		return
+	
+	if event.is_action_released("primary_fire"):
+		selected_gun.primary_released()
