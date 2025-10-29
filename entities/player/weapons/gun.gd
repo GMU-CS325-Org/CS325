@@ -15,6 +15,9 @@ func primary_fire() -> void:
 func secondary_fire() -> void:
 	pass
 
+func primary_released() -> void:
+	pass
+
 func _reset_primary() -> void:
 	has_primary_action = true
 	

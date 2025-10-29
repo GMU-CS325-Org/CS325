@@ -1,6 +1,5 @@
 class_name BulletSpawner extends Node2D
 
-
 var age : int = 0 #number of 16th notes the spawner has been active for
 var bullet_volley_groups : Dictionary[int,BulletVolleyGroup]
 
