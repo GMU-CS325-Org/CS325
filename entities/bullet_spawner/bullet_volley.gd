@@ -11,13 +11,9 @@ class_name BulletVolley extends Node2D
 @export var spacing_degrees : float = 0
 @export var speed : float = 0.0 #the speed the bullet travels
 
-#index 0 is eighth noted. index 1 is quarter notes
-#
-
-#@export var wiggle : float = 0.0 #bullet will move between two points on beat
-#@export var curved : float = 0.0 #changes the flight trajectory of a bullet to curve
-##@export var direction : float = 0 #the direction that spawner is facing. matters for patterns not aimed at the player
-#@export var spacing : Array = [0.0, 0.0] #the spacing between bullets. should only be set if bullet_num is bigger than 1
+@export var wiggle_freq : float = 0.0
+@export var wiggle_dist : float = 0.0 #bullet will move between two points on beat
+@export var curved : float = 0.0 #changes the flight trajectory of a bullet to curve
 #index 0 is the x value. index 1 is the y value
 
 func fire() -> void:
@@ -37,4 +33,7 @@ func fire() -> void:
 		bullet_instance.set_color(color)
 		bullet_instance.direction = shoot_dir.rotated(deg_to_rad(initial_shoot_angle+spacing_degrees*i))
 		bullet_instance.speed = speed
+		bullet_instance.curving = curved
+		bullet_instance.wiggle_freq = wiggle_freq
+		bullet_instance.wiggle_dist = wiggle_dist
 		add_sibling(bullet_instance)

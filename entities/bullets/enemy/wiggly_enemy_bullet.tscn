@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4s38uemperdx"]
+
+[ext_resource type="Script" uid="uid://buknw0j74r3ak" path="res://entities/bullets/bullet.gd" id="1_aloan"]
+[ext_resource type="Texture2D" uid="uid://vi8b4yxy6ghe" path="res://sprites/spr_colorless_bullet.png" id="2_hwc4n"]
+[ext_resource type="Texture2D" uid="uid://dyccf13cnom4j" path="res://sprites/spr_red_bullet.png" id="3_qq24n"]
+[ext_resource type="Texture2D" uid="uid://de3eobkvftrue" path="res://sprites/spr_blue_bullet.png" id="4_7fy2l"]
+[ext_resource type="PackedScene" uid="uid://007x0lj0h4n0" path="res://components/damage/damage_component.tscn" id="5_hyvsd"]
+[ext_resource type="PackedScene" uid="uid://dpfiw1ru7vegt" path="res://components/movement/wiggly_bullet_movement_component.tscn" id="6_aloan"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5rc4h"]
+radius = 9.0
+
+[node name="Bullet" type="Area2D" node_paths=PackedStringArray("damage_component")]
+script = ExtResource("1_aloan")
+damage_component = NodePath("DamageComponent")
+color_sprites = Array[Texture]([ExtResource("2_hwc4n"), ExtResource("3_qq24n"), ExtResource("4_7fy2l")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hwc4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5rc4h")
+
+[node name="DamageComponent" parent="." instance=ExtResource("5_hyvsd")]
+source = 1
+damage = 1
+
+[node name="WigglyBulletMovementComponent" parent="." node_paths=PackedStringArray("bullet") instance=ExtResource("6_aloan")]
+bullet = NodePath("..")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

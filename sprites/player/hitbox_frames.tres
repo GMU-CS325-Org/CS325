@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bfralqieeipm7"]
+
+[ext_resource type="Texture2D" uid="uid://tgoxhj34qjm4" path="res://sprites/player/hitbox_0001.png" id="1_ofwu6"]
+[ext_resource type="Texture2D" uid="uid://b7blua53751x0" path="res://sprites/player/hitbox_0002.png" id="2_fnin6"]
+[ext_resource type="Texture2D" uid="uid://c6fdcjqbkch32" path="res://sprites/player/hitbox_0003.png" id="3_8p1de"]
+[ext_resource type="Texture2D" uid="uid://cjwenqx1mxyyf" path="res://sprites/player/hitbox_0004.png" id="4_3gro7"]
+[ext_resource type="Texture2D" uid="uid://c2fjcehvkcko0" path="res://sprites/player/hitbox_0005.png" id="5_c1os4"]
+[ext_resource type="Texture2D" uid="uid://cavs8yn3evs82" path="res://sprites/player/hitbox_0006.png" id="6_j3ed8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ofwu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fnin6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8p1de")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3gro7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c1os4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j3ed8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
