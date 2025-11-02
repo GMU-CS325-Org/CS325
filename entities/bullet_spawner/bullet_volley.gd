@@ -1,5 +1,6 @@
 class_name BulletVolley extends Node2D
 
+@onready var bullet_container : Node2D = BulletContainer.instance
 
 @export var beat : int #Beat that this volley gets fired
 @export var lifetime : int = 30 #how many sixteenth notes the bullets fired should last for

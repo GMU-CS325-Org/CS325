@@ -32,6 +32,7 @@ folder_colors={
 [global_group]
 
 bullet_container=""
+coin_shootable=""
 
 [input]
 
