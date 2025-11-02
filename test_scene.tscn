@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ewulbntlwwa7"]
+[gd_scene load_steps=7 format=3 uid="uid://ewulbntlwwa7"]
 
 [ext_resource type="Script" uid="uid://34n6bcwd02wq" path="res://test_scene.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://bumudl2byvexc" path="res://bullet_container.gd" id="2_7cbxl"]
 [ext_resource type="PackedScene" uid="uid://kiekkvdi5uqo" path="res://entities/player/player.tscn" id="2_ia1lp"]
+[ext_resource type="Texture2D" uid="uid://djvfumqdh38fe" path="res://sprites/background.png" id="6_7cbxl"]
+[ext_resource type="PackedScene" uid="uid://d1c83nndulhie" path="res://level/attacks/boxed_in.tscn" id="6_8pr8v"]
 [ext_resource type="PackedScene" uid="uid://qyt6aarjhobb" path="res://entities/enemy/enemy.tscn" id="7_8pr8v"]
 
 [node name="TestScene" type="Node2D"]
@@ -11,13 +13,15 @@ script = ExtResource("1_uhqqe")
 [node name="BulletContainer" type="Node2D" parent="." groups=["bullet_container"]]
 script = ExtResource("2_7cbxl")
 
+[node name="Player" parent="." instance=ExtResource("2_ia1lp")]
+position = Vector2(594, 471)
+
 [node name="Button" type="Button" parent="."]
+z_index = -1
 offset_left = 468.0
 offset_top = 190.0
 offset_right = 723.0
 offset_bottom = 363.0
-
-[node name="Player" parent="." instance=ExtResource("2_ia1lp")]
 
 [node name="HSlider" type="HSlider" parent="."]
 offset_left = 375.0
@@ -29,6 +33,14 @@ max_value = 100000.0
 
 [node name="enemy" parent="." instance=ExtResource("7_8pr8v")]
 position = Vector2(904, 304)
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(577.111, 325.5)
+scale = Vector2(0.599074, 0.599074)
+texture = ExtResource("6_7cbxl")
+
+[node name="boxed in" parent="." instance=ExtResource("6_8pr8v")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://kiekkvdi5uqo"]
+[gd_scene load_steps=11 format=3 uid="uid://kiekkvdi5uqo"]
 
 [ext_resource type="Script" uid="uid://ch02l7yb2hqh6" path="res://entities/player/player.gd" id="1_symyc"]
-[ext_resource type="Texture2D" uid="uid://c66c8ec12wa4u" path="res://icon.svg" id="2_abrql"]
+[ext_resource type="SpriteFrames" uid="uid://dydlktiu0v17e" path="res://sprites/player/player_frames.tres" id="2_qiwj3"]
+[ext_resource type="SpriteFrames" uid="uid://bfralqieeipm7" path="res://sprites/player/hitbox_frames.tres" id="3_26q78"]
 [ext_resource type="PackedScene" uid="uid://hiyp7n7uvc4m" path="res://components/health/health_component.tscn" id="3_sglur"]
+[ext_resource type="SpriteFrames" uid="uid://chougmlwp73u3" path="res://sprites/player/ticker_frames.tres" id="4_bectd"]
 [ext_resource type="PackedScene" uid="uid://b7d3oiw27awag" path="res://components/hurtbox/hurtbox_component.tscn" id="4_bls4j"]
 [ext_resource type="PackedScene" uid="uid://dnky1p56jka1p" path="res://entities/player/weapons/player_weapons.tscn" id="5_fkugw"]
 
@@ -15,17 +17,34 @@ point_count = 2
 radius = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fkugw"]
-radius = 8.0
+radius = 3.40136
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(1.4, 1.4)
 script = ExtResource("1_symyc")
 boost_curve = SubResource("Curve_abrql")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_abrql")
+[node name="body" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.159992, -13.16)
+scale = Vector2(0.28, 0.28)
+sprite_frames = ExtResource("2_qiwj3")
+animation = &"idle_blue"
+
+[node name="hitbox" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.159992, -13.16)
+scale = Vector2(0.217998, 0.217998)
+sprite_frames = ExtResource("3_26q78")
+animation = &"idle"
+
+[node name="ticker" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.159992, -13.16)
+scale = Vector2(0.28, 0.28)
+sprite_frames = ExtResource("4_bectd")
+animation = &"60_bpm"
+speed_scale = 2.466
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.52, 0.52)
 shape = SubResource("CircleShape2D_sglur")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_sglur")]
@@ -36,6 +55,8 @@ health_component = NodePath("../HealthComponent")
 allowed_damage_sources = Array[int]([1])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, -2.85714)
+scale = Vector2(0.84, 0.84)
 shape = SubResource("CircleShape2D_fkugw")
 
 [node name="PlayerWeapons" parent="." instance=ExtResource("5_fkugw")]

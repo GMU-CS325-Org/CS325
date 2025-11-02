@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://0tileshw7mys"]
 
 [ext_resource type="Script" uid="uid://t6gk21uhb1t3" path="res://level/music/beat_sync/beat_sync.gd" id="1_pux81"]
-[ext_resource type="AudioStream" uid="uid://dgg53m36ep0oy" path="res://level/music/test.mp3" id="2_fkkgf"]
+[ext_resource type="AudioStream" uid="uid://cb6hxvojovcr8" path="res://level/music/It’s TV Time!.mp3" id="2_m3kry"]
 
 [node name="BeatSync" type="Node"]
 script = ExtResource("1_pux81")
 
 [node name="SongPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_fkkgf")
+stream = ExtResource("2_m3kry")

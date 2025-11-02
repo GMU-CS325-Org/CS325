@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2j02r64a7yar"]
+
+[ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="1_x634o"]
+[ext_resource type="Script" uid="uid://d2gkpbmicg5b" path="res://entities/bullet_spawner/bullet_volley.gd" id="2_hgc33"]
+[ext_resource type="PackedScene" uid="uid://bpunhsi3rwh0u" path="res://entities/bullets/enemy/basic_enemy_bullet.tscn" id="3_q8c4o"]
+
+[node name="TestPattern2" type="Node2D"]
+
+[node name="BulletSpawner" parent="." instance=ExtResource("1_x634o")]
+position = Vector2(562, 0)
+scale = Vector2(75.6, 1)
+lifetime = 6
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner"]
+script = ExtResource("2_hgc33")
+bullet_prefab = ExtResource("3_q8c4o")
+color = 1
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner"]
+script = ExtResource("2_hgc33")
+beat = 3
+bullet_prefab = ExtResource("3_q8c4o")
+color = 2
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletSpawner3" parent="." instance=ExtResource("1_x634o")]
+position = Vector2(562, 0)
+lifetime = 14
+start_beat = 2
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner3"]
+script = ExtResource("2_hgc33")
+beat = 8
+bullet_prefab = ExtResource("3_q8c4o")
+color = 1
+targeted = true
+quantity = 40
+spacing_degrees = 3.5
+speed = 4.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley3" type="Node2D" parent="BulletSpawner3"]
+script = ExtResource("2_hgc33")
+beat = 9
+bullet_prefab = ExtResource("3_q8c4o")
+targeted = true
+quantity = 40
+offset_degrees = 1.0
+spacing_degrees = 3.5
+speed = 4.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley4" type="Node2D" parent="BulletSpawner3"]
+script = ExtResource("2_hgc33")
+beat = 10
+bullet_prefab = ExtResource("3_q8c4o")
+color = 2
+targeted = true
+quantity = 40
+offset_degrees = -1.0
+spacing_degrees = 3.5
+speed = 4.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley5" type="Node2D" parent="BulletSpawner3"]
+script = ExtResource("2_hgc33")
+beat = 11
+bullet_prefab = ExtResource("3_q8c4o")
+targeted = true
+quantity = 40
+offset_degrees = 1.0
+spacing_degrees = 3.5
+speed = 4.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"

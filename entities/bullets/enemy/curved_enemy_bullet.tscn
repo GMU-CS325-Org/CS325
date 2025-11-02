@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bnrqxqqx2m8ep"]
 
 [ext_resource type="Script" uid="uid://buknw0j74r3ak" path="res://entities/bullets/bullet.gd" id="1_h755w"]
-[ext_resource type="Texture2D" uid="uid://4gietsia3ph5" path="res://sprites/spr_colorless_rice.png" id="2_h755w"]
-[ext_resource type="Texture2D" uid="uid://cc5xrpviqhmp7" path="res://sprites/spr_red_rice.png" id="3_etm3o"]
-[ext_resource type="Texture2D" uid="uid://de3eobkvftrue" path="res://sprites/spr_blue_bullet.png" id="4_asabw"]
+[ext_resource type="Texture2D" uid="uid://vi8b4yxy6ghe" path="res://sprites/bullets/spr_colorless_bullet.png" id="2_h755w"]
+[ext_resource type="Texture2D" uid="uid://dyccf13cnom4j" path="res://sprites/bullets/spr_red_bullet.png" id="3_etm3o"]
+[ext_resource type="Texture2D" uid="uid://de3eobkvftrue" path="res://sprites/bullets/spr_blue_bullet.png" id="4_asabw"]
 [ext_resource type="PackedScene" uid="uid://007x0lj0h4n0" path="res://components/damage/damage_component.tscn" id="5_wv8uj"]
 [ext_resource type="PackedScene" uid="uid://iqiyvpp7hsqc" path="res://components/movement/curved_bullet_movement_component.tscn" id="6_h755w"]
 
@@ -12,7 +12,7 @@ radius = 9.0
 
 [sub_resource type="Curve" id="Curve_h755w"]
 _limits = [-2.23517e-10, 1.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.123596), -0.154979, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="Bullet" type="Area2D" node_paths=PackedStringArray("damage_component")]
