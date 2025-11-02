@@ -1,12 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnky1p56jka1p"]
+[gd_scene load_steps=6 format=3 uid="uid://dnky1p56jka1p"]
 
 [ext_resource type="Script" uid="uid://du8wu7ynhreba" path="res://entities/player/weapons/player_weapons.gd" id="1_b66g0"]
-[ext_resource type="Script" uid="uid://dbmkrehfiy60g" path="res://entities/player/weapons/picktol.gd" id="2_234d4"]
-[ext_resource type="PackedScene" uid="uid://d1kpkif2jrhj7" path="res://entities/bullets/player/player_bullet.tscn" id="3_234d4"]
+[ext_resource type="Script" uid="uid://bay6gfjebpb5j" path="res://entities/player/weapons/picktol.gd" id="2_234d4"]
+[ext_resource type="Script" uid="uid://dbmkrehfiy60g" path="res://entities/player/weapons/triangle.gd" id="3_sju1t"]
+[ext_resource type="PackedScene" uid="uid://c1e6eg55m3270" path="res://entities/bullets/player/player_coin.tscn" id="3_wix3d"]
+[ext_resource type="PackedScene" uid="uid://007x0lj0h4n0" path="res://components/damage/damage_component.tscn" id="4_wix3d"]
 
 [node name="PlayerWeapons" type="Node2D"]
 script = ExtResource("1_b66g0")
 
 [node name="Picktol" type="Node2D" parent="."]
 script = ExtResource("2_234d4")
-bullet = ExtResource("3_234d4")
+coin = ExtResource("3_wix3d")
+
+[node name="RayCast2D" type="RayCast2D" parent="Picktol"]
+target_position = Vector2(0, 0)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="PistolDamageComponent" parent="Picktol" instance=ExtResource("4_wix3d")]
+damage = 1
+
+[node name="Triangle" type="Node2D" parent="."]
+script = ExtResource("3_sju1t")
+
+[node name="RayCast2D" type="RayCast2D" parent="Triangle"]
+target_position = Vector2(0, 0)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="DamageComponent" parent="Triangle" instance=ExtResource("4_wix3d")]
+damage = 1

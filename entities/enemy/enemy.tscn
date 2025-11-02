@@ -18,8 +18,9 @@ texture = ExtResource("2_dt443")
 [node name="HealthComponent" parent="." instance=ExtResource("3_d50e0")]
 max_health = 100
 
-[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_61ikd")]
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") groups=["coin_shootable"] instance=ExtResource("4_61ikd")]
 health_component = NodePath("../HealthComponent")
+allowed_damage_sources = Array[int]([0])
 allowed_damage_colors = Array[int]([0])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]

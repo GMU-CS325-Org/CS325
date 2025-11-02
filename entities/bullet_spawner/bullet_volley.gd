@@ -1,5 +1,6 @@
 class_name BulletVolley extends Node2D
 
+@onready var bullet_container : Node2D = BulletContainer.instance
 
 @export var beat : int ##Beat that this volley gets fired
 

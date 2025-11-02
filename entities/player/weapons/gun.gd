@@ -1,6 +1,5 @@
 class_name Gun extends Node2D
 
-@export var bullet : PackedScene
 @onready var bullet_container : Node2D = BulletContainer.instance
 
 var has_primary_action : bool = true
@@ -16,9 +15,20 @@ func primary_fire() -> void:
 func secondary_fire() -> void:
 	pass
 
+func primary_released() -> void:
+	pass
+
 func _reset_primary() -> void:
 	has_primary_action = true
 	
 func _reset_secondary() -> void:
 	has_secondary_action = true
-	
+
+
+func raycast_shoot(shoot_dir : Vector2, damage_component : DamageComponent) -> void:
+	var raycast : RayCast2D = $RayCast2D
+	raycast.target_position = shoot_dir*2000
+	raycast.force_raycast_update()
+	var collision = raycast.get_collider()
+	if collision is HurtboxComponent:
+		collision.hit(damage_component)
