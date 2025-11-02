@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpfiw1ru7vegt"]
+
+[ext_resource type="Script" uid="uid://dtl3kic4pcg0g" path="res://components/movement/wiggly_bullet_movement_component.gd" id="1_1wl61"]
+
+[node name="WigglyBulletMovementComponent" type="Node"]
+script = ExtResource("1_1wl61")

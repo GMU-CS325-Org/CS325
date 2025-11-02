@@ -1,11 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ewulbntlwwa7"]
+[gd_scene load_steps=5 format=3 uid="uid://ewulbntlwwa7"]
 
 [ext_resource type="Script" uid="uid://34n6bcwd02wq" path="res://test_scene.gd" id="1_uhqqe"]
-[ext_resource type="Script" path="res://bullet_container.gd" id="2_7cbxl"]
+[ext_resource type="Script" uid="uid://bumudl2byvexc" path="res://bullet_container.gd" id="2_7cbxl"]
 [ext_resource type="PackedScene" uid="uid://kiekkvdi5uqo" path="res://entities/player/player.tscn" id="2_ia1lp"]
-[ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="3_sasra"]
-[ext_resource type="PackedScene" uid="uid://b1r6l7hm2ggci" path="res://entities/bullet_spawner/bullet_volley.tscn" id="4_2nij2"]
-[ext_resource type="PackedScene" uid="uid://bpunhsi3rwh0u" path="res://entities/bullets/enemy/basic_enemy_bullet.tscn" id="5_7cbxl"]
 [ext_resource type="PackedScene" uid="uid://qyt6aarjhobb" path="res://entities/enemy/enemy.tscn" id="7_8pr8v"]
 
 [node name="TestScene" type="Node2D"]
@@ -21,41 +18,6 @@ offset_right = 723.0
 offset_bottom = 363.0
 
 [node name="Player" parent="." instance=ExtResource("2_ia1lp")]
-
-[node name="BulletSpawner" parent="Player" instance=ExtResource("3_sasra")]
-position = Vector2(590, 31)
-lifetime = 64
-
-[node name="BulletVolley" parent="Player/BulletSpawner" instance=ExtResource("4_2nij2")]
-bullet_prefab = ExtResource("5_7cbxl")
-color = 1
-quantity = 9
-spacing_degrees = 30.0
-speed = 3.0
-
-[node name="BulletVolley2" parent="Player/BulletSpawner" instance=ExtResource("4_2nij2")]
-beat = 4
-bullet_prefab = ExtResource("5_7cbxl")
-color = 1
-quantity = 10
-spacing_degrees = 30.0
-speed = 3.0
-
-[node name="BulletVolley3" parent="Player/BulletSpawner" instance=ExtResource("4_2nij2")]
-beat = 8
-bullet_prefab = ExtResource("5_7cbxl")
-color = 2
-quantity = 9
-spacing_degrees = 30.0
-speed = 3.0
-
-[node name="BulletVolley4" parent="Player/BulletSpawner" instance=ExtResource("4_2nij2")]
-beat = 12
-bullet_prefab = ExtResource("5_7cbxl")
-color = 2
-quantity = 10
-spacing_degrees = 30.0
-speed = 3.0
 
 [node name="HSlider" type="HSlider" parent="."]
 offset_left = 375.0

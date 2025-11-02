@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://qyt6aarjhobb"]
 
 [ext_resource type="Script" uid="uid://be74u86jhe7fp" path="res://entities/enemy/enemy.gd" id="1_dt443"]
-[ext_resource type="Texture2D" uid="uid://8xk4umc42lbw" path="res://sprites/enemyCactus.svg" id="2_4wwj3"]
+[ext_resource type="Texture2D" uid="uid://byp28ctryfjcj" path="res://sprites/Cactus.png" id="2_dt443"]
 [ext_resource type="PackedScene" uid="uid://hiyp7n7uvc4m" path="res://components/health/health_component.tscn" id="3_d50e0"]
 [ext_resource type="PackedScene" uid="uid://b7d3oiw27awag" path="res://components/hurtbox/hurtbox_component.tscn" id="4_61ikd"]
 
@@ -12,8 +12,8 @@ radius = 99.2018
 script = ExtResource("1_dt443")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_4wwj3")
+scale = Vector2(4.63929, 4.63929)
+texture = ExtResource("2_dt443")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_d50e0")]
 max_health = 100

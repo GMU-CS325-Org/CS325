@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cjuhtmeorjqc3"]
+
+[ext_resource type="Texture2D" uid="uid://qcfkb45prt55" path="res://sprites/triangle/tri_0001.png" id="1_p7kth"]
+[ext_resource type="Texture2D" uid="uid://mw2hlbh64h6a" path="res://sprites/triangle/tri_0002.png" id="2_5p345"]
+[ext_resource type="Texture2D" uid="uid://bbfq1yewr47un" path="res://sprites/triangle/tri_0003.png" id="3_n7wi4"]
+[ext_resource type="Texture2D" uid="uid://ce58tnbnwly44" path="res://sprites/triangle/tri_0004.png" id="4_huywk"]
+[ext_resource type="Texture2D" uid="uid://duuya0ohsm1o5" path="res://sprites/triangle/tri_0005.png" id="5_qtl1c"]
+[ext_resource type="Texture2D" uid="uid://nq4rl5bwkn5p" path="res://sprites/triangle/tri_0006.png" id="6_mkvgs"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p7kth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5p345")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n7wi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_huywk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qtl1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mkvgs")
+}],
+"loop": true,
+"name": &"firing",
+"speed": 12.0
+}]
