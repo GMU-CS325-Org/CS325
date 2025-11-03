@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://c6p5lgutew28r"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://c6p5lgutew28r"]
 
 [ext_resource type="Script" uid="uid://b4lopqu14nk7" path="res://level/level_data/level_data.gd" id="1_t8xg7"]
+[ext_resource type="AudioStream" uid="uid://cb6hxvojovcr8" path="res://level/music/It’s TV Time!.mp3" id="2_t8xg7"]
 
 [resource]
 script = ExtResource("1_t8xg7")
-bpm = 0
+song = ExtResource("2_t8xg7")
+bpm = 148
 first_note_time = 0.0
 metadata/_custom_type_script = "uid://b4lopqu14nk7"
