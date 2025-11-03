@@ -12,7 +12,6 @@ func _ready() -> void:
 
 
 func hit(damage_component: DamageComponent) -> void:
-	print(damage_component.damage)
 	if allowed_damage_sources.has(damage_component.source):
 		if damage_component.source == DamageComponent.Source.ENEMY:
 			if not allowed_damage_colors.has(damage_component.color):

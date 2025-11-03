@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bpunhsi3rwh0u"]
 
 [ext_resource type="Script" uid="uid://buknw0j74r3ak" path="res://entities/bullets/bullet.gd" id="1_pwliv"]
-[ext_resource type="Texture2D" uid="uid://vi8b4yxy6ghe" path="res://sprites/spr_colorless_bullet.png" id="2_owwvi"]
-[ext_resource type="Texture2D" uid="uid://dyccf13cnom4j" path="res://sprites/spr_red_bullet.png" id="3_tji7f"]
-[ext_resource type="Texture2D" uid="uid://de3eobkvftrue" path="res://sprites/spr_blue_bullet.png" id="4_xa4cl"]
+[ext_resource type="Texture2D" uid="uid://vi8b4yxy6ghe" path="res://sprites/bullets/spr_colorless_bullet.png" id="2_owwvi"]
+[ext_resource type="Texture2D" uid="uid://dyccf13cnom4j" path="res://sprites/bullets/spr_red_bullet.png" id="3_tji7f"]
+[ext_resource type="Texture2D" uid="uid://de3eobkvftrue" path="res://sprites/bullets/spr_blue_bullet.png" id="4_xa4cl"]
 [ext_resource type="PackedScene" uid="uid://007x0lj0h4n0" path="res://components/damage/damage_component.tscn" id="5_128ds"]
 [ext_resource type="PackedScene" uid="uid://dilob6o2f1c0t" path="res://components/movement/linear_bullet_movement_component.tscn" id="6_owwvi"]
 

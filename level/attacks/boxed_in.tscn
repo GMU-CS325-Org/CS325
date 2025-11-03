@@ -1,68 +1,51 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1c83nndulhie"]
+[gd_scene load_steps=5 format=3 uid="uid://d1c83nndulhie"]
 
-[ext_resource type="Texture2D" uid="uid://ckcltmnrroh77" path="res://sprites/warning_placeholder.png" id="1_8hijt"]
 [ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="1_bd2xh"]
 [ext_resource type="PackedScene" uid="uid://b1r6l7hm2ggci" path="res://entities/bullet_spawner/bullet_volley.tscn" id="2_p2s8k"]
 [ext_resource type="PackedScene" uid="uid://bpunhsi3rwh0u" path="res://entities/bullets/enemy/basic_enemy_bullet.tscn" id="3_p2s8k"]
-[ext_resource type="PackedScene" uid="uid://b4s38uemperdx" path="res://entities/bullets/enemy/wiggly_enemy_bullet.tscn" id="5_gk74w"]
+[ext_resource type="Script" uid="uid://d2gkpbmicg5b" path="res://entities/bullet_spawner/bullet_volley.gd" id="4_ibkq6"]
 
-[node name="TestPattern3" type="Node2D"]
+[node name="boxed in" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(593, 357)
-scale = Vector2(3.56, 2.68)
-texture = ExtResource("1_8hijt")
+[node name="restrainer" parent="." instance=ExtResource("1_bd2xh")]
+position = Vector2(236, -3)
+scale = Vector2(31.63, 1.603)
+lifetime = 5
+
+[node name="BulletVolley" parent="restrainer" instance=ExtResource("2_p2s8k")]
+beat = 3
+bullet_prefab = ExtResource("3_p2s8k")
+speed = 2.0
+
+[node name="restrainer2" parent="." instance=ExtResource("1_bd2xh")]
+position = Vector2(910, 642)
+scale = Vector2(31.63, 1.603)
+lifetime = 5
+
+[node name="BulletVolley" parent="restrainer2" instance=ExtResource("2_p2s8k")]
+beat = 3
+bullet_prefab = ExtResource("3_p2s8k")
+offset_degrees = 180.0
+speed = 2.0
 
 [node name="BulletSpawner" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(604, 270)
-scale = Vector2(19.08, 1)
-lifetime = 5
-looping = false
+position = Vector2(-3, 315)
+scale = Vector2(1, 25)
+lifetime = 7
 
-[node name="BulletVolley" parent="BulletSpawner" instance=ExtResource("2_p2s8k")]
-beat = 5
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner"]
+script = ExtResource("4_ibkq6")
 bullet_prefab = ExtResource("3_p2s8k")
-
-[node name="BulletSpawner2" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(604, 452)
-scale = Vector2(19.08, 1)
-lifetime = 5
-looping = false
-
-[node name="BulletVolley" parent="BulletSpawner2" instance=ExtResource("2_p2s8k")]
-beat = 5
-bullet_prefab = ExtResource("3_p2s8k")
-
-[node name="BulletSpawner3" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(430, 363)
-rotation = 1.5708
-scale = Vector2(19.08, 1)
-lifetime = 5
-looping = false
-
-[node name="BulletVolley" parent="BulletSpawner3" instance=ExtResource("2_p2s8k")]
-beat = 5
-bullet_prefab = ExtResource("3_p2s8k")
-
-[node name="BulletSpawner4" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(752, 363)
-rotation = 1.5708
-scale = Vector2(19.08, 1)
-lifetime = 5
-looping = false
-
-[node name="BulletVolley" parent="BulletSpawner4" instance=ExtResource("2_p2s8k")]
-beat = 5
-bullet_prefab = ExtResource("3_p2s8k")
-
-[node name="BulletSpawner5" parent="." instance=ExtResource("1_bd2xh")]
-lifetime = 3
-
-[node name="BulletVolley" parent="BulletSpawner5" instance=ExtResource("2_p2s8k")]
-beat = 3
-bullet_prefab = ExtResource("5_gk74w")
 color = 1
-targeted = true
-speed = 4.0
-wiggle_freq = 5.0
-wiggle_dist = 5.0
+offset_degrees = -90.0
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner"]
+script = ExtResource("4_ibkq6")
+beat = 4
+bullet_prefab = ExtResource("3_p2s8k")
+color = 2
+offset_degrees = -90.0
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"

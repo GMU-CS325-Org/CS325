@@ -2,7 +2,8 @@ class_name BulletVolley extends Node2D
 
 @onready var bullet_container : Node2D = BulletContainer.instance
 
-@export var beat : int ##Beat that this volley gets fired
+@export var beat : int #Beat that this volley gets fired
+@export var lifetime : int = 30 #how many sixteenth notes the bullets fired should last for
 
 @export var bullet_prefab : PackedScene #The bullets to be fired. Loops through the array if multiple are provided
 @export var color : DamageComponent.DamageColor
@@ -31,6 +32,7 @@ func fire() -> void:
 	
 	for i in range(0,quantity):
 		var bullet_instance : Bullet = bullet_prefab.instantiate()
+		bullet_instance.lifetime = lifetime
 		bullet_instance.set_color(color)
 		bullet_instance.direction = shoot_dir.rotated(deg_to_rad(initial_shoot_angle+spacing_degrees*i))
 		bullet_instance.speed = speed

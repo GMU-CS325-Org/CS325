@@ -37,9 +37,10 @@ func _ready() -> void:
 	pass
 
 func play(level : LevelData):
-	print("PLAYING")
+	print("PLAYING", level.bpm)
 	print(level)
 	current_level = level
+	$SongPlayer.stream = current_level.song
 	start_time = Time.get_ticks_usec()
 	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
 	$SongPlayer.play()

@@ -9,5 +9,5 @@ func _physics_process(delta: float) -> void:
 	bullet.move_local_x(movement_vector.x)
 	bullet.move_local_y(movement_vector.y)
 	sample_point += delta / 3.0
-	bullet.rotate(bullet.curving * rotation_curve.sample(sample_point))
+	bullet.rotate(bullet.curving * delta * rotation_curve.sample(sample_point))
 	pass

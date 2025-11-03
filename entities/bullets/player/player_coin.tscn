@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://cbi7drpdbodaj" path="res://entities/bullets/player/player_coin.gd" id="1_dca15"]
 [ext_resource type="PackedScene" uid="uid://007x0lj0h4n0" path="res://components/damage/damage_component.tscn" id="1_pcvrm"]
 [ext_resource type="Script" uid="uid://do5vs8m1law7o" path="res://components/health/health_component.gd" id="3_0mj4a"]
-[ext_resource type="Texture2D" uid="uid://dyccf13cnom4j" path="res://sprites/spr_red_bullet.png" id="3_ankud"]
+[ext_resource type="Texture2D" uid="uid://dyccf13cnom4j" path="res://sprites/bullets/spr_red_bullet.png" id="3_ankud"]
 [ext_resource type="Script" uid="uid://lxg83i28nlul" path="res://components/hurtbox/hurtbox_component.gd" id="4_dca15"]
-[ext_resource type="Texture2D" uid="uid://de3eobkvftrue" path="res://sprites/spr_blue_bullet.png" id="4_tomru"]
-[ext_resource type="Texture2D" uid="uid://vi8b4yxy6ghe" path="res://sprites/spr_colorless_bullet.png" id="5_c4ydd"]
+[ext_resource type="Texture2D" uid="uid://de3eobkvftrue" path="res://sprites/bullets/spr_blue_bullet.png" id="4_tomru"]
+[ext_resource type="Texture2D" uid="uid://vi8b4yxy6ghe" path="res://sprites/bullets/spr_colorless_bullet.png" id="5_c4ydd"]
 [ext_resource type="PackedScene" uid="uid://dgumow3im617v" path="res://components/movement/coin_movement_component.tscn" id="8_tomru"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0mj4a"]
@@ -16,6 +16,7 @@ script = ExtResource("1_dca15")
 speed = 300.0
 damage_component = NodePath("DamageComponent")
 color_sprites = Array[Texture]([ExtResource("5_c4ydd"), ExtResource("3_ankud"), ExtResource("4_tomru")])
+lifetime = 32
 metadata/_custom_type_script = "uid://lxg83i28nlul"
 
 [node name="DamageComponent" parent="." instance=ExtResource("1_pcvrm")]
