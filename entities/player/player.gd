@@ -18,6 +18,7 @@ var boost_time : float = -1;
 	
 func _ready() -> void:
 	instance = self
+	$HealthComponent.killed.connect(_on_death)
 	BeatSync.quarter_beat.connect(_quarter_beat)
 	$ticker.play("60_bpm")
 
@@ -45,3 +46,6 @@ func _physics_process(delta: float) -> void:
 		velocity *= 0.5
 	#print(total_speed)
 	move_and_slide()
+
+func _on_death() -> void:
+	get_tree().reload_current_scene()

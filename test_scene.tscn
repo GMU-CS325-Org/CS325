@@ -16,13 +16,6 @@ script = ExtResource("2_7cbxl")
 [node name="Player" parent="." instance=ExtResource("2_ia1lp")]
 position = Vector2(594, 471)
 
-[node name="Button" type="Button" parent="."]
-z_index = -1
-offset_left = 468.0
-offset_top = 190.0
-offset_right = 723.0
-offset_bottom = 363.0
-
 [node name="HSlider" type="HSlider" parent="."]
 offset_left = 375.0
 offset_top = 499.0
@@ -42,5 +35,4 @@ texture = ExtResource("6_7cbxl")
 
 [node name="boxed in" parent="." instance=ExtResource("6_8pr8v")]
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
