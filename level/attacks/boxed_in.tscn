@@ -1,20 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1c83nndulhie"]
+[gd_scene load_steps=4 format=3 uid="uid://d1c83nndulhie"]
 
-[ext_resource type="Texture2D" uid="uid://ckcltmnrroh77" path="res://sprites/warning_placeholder.png" id="1_8hijt"]
 [ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="1_bd2xh"]
 [ext_resource type="PackedScene" uid="uid://b1r6l7hm2ggci" path="res://entities/bullet_spawner/bullet_volley.tscn" id="2_p2s8k"]
 [ext_resource type="PackedScene" uid="uid://bpunhsi3rwh0u" path="res://entities/bullets/enemy/basic_enemy_bullet.tscn" id="3_p2s8k"]
 
 [node name="boxed in" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(593, 357)
-scale = Vector2(3.56, 2.68)
-texture = ExtResource("1_8hijt")
-
 [node name="restrainer" parent="." instance=ExtResource("1_bd2xh")]
 position = Vector2(236, -3)
-scale = Vector2(19.2152, 0.973651)
+scale = Vector2(24.335, 1.234)
 lifetime = 5
 
 [node name="BulletVolley" parent="restrainer" instance=ExtResource("2_p2s8k")]
@@ -23,102 +17,12 @@ bullet_prefab = ExtResource("3_p2s8k")
 speed = 2.0
 
 [node name="restrainer2" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(236, 656)
-rotation = 3.14159
-scale = Vector2(19.2152, 0.973651)
+position = Vector2(1047, 669)
+scale = Vector2(24.335, 1.234)
 lifetime = 5
 
 [node name="BulletVolley" parent="restrainer2" instance=ExtResource("2_p2s8k")]
 beat = 3
 bullet_prefab = ExtResource("3_p2s8k")
+offset_degrees = 180.0
 speed = 2.0
-
-[node name="restrainer3" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(950, -3)
-scale = Vector2(19.2152, 0.973651)
-lifetime = 5
-
-[node name="BulletVolley" parent="restrainer3" instance=ExtResource("2_p2s8k")]
-beat = 3
-bullet_prefab = ExtResource("3_p2s8k")
-speed = 2.0
-
-[node name="restrainer4" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(950, 656)
-rotation = 3.14159
-scale = Vector2(19.2152, 0.973651)
-lifetime = 5
-
-[node name="BulletVolley" parent="restrainer4" instance=ExtResource("2_p2s8k")]
-beat = 3
-bullet_prefab = ExtResource("3_p2s8k")
-speed = 2.0
-
-[node name="restrainer5" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(1159, 555)
-rotation = 1.5708
-scale = Vector2(13.16, 1)
-lifetime = 5
-
-[node name="BulletVolley" parent="restrainer5" instance=ExtResource("2_p2s8k")]
-beat = 3
-bullet_prefab = ExtResource("3_p2s8k")
-speed = 2.0
-
-[node name="restrainer6" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(-3, 107)
-rotation = -1.5708
-scale = Vector2(13.16, 1)
-lifetime = 5
-
-[node name="BulletVolley" parent="restrainer6" instance=ExtResource("2_p2s8k")]
-beat = 3
-bullet_prefab = ExtResource("3_p2s8k")
-speed = 2.0
-
-[node name="boxU" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(604, 270)
-scale = Vector2(19.08, 1)
-lifetime = 7
-looping = false
-
-[node name="BulletVolley" parent="boxU" instance=ExtResource("2_p2s8k")]
-beat = 7
-bullet_prefab = ExtResource("3_p2s8k")
-
-[node name="boxB" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(604, 452)
-scale = Vector2(19.08, 1)
-lifetime = 7
-looping = false
-
-[node name="BulletVolley" parent="boxB" instance=ExtResource("2_p2s8k")]
-beat = 7
-bullet_prefab = ExtResource("3_p2s8k")
-
-[node name="BoxL" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(430, 363)
-rotation = 1.5708
-scale = Vector2(19.08, 1)
-lifetime = 7
-looping = false
-
-[node name="BulletVolley" parent="BoxL" instance=ExtResource("2_p2s8k")]
-beat = 7
-bullet_prefab = ExtResource("3_p2s8k")
-
-[node name="boxR" parent="." instance=ExtResource("1_bd2xh")]
-position = Vector2(752, 363)
-rotation = 1.5708
-scale = Vector2(19.08, 1)
-lifetime = 7
-looping = false
-
-[node name="BulletVolley" parent="boxR" instance=ExtResource("2_p2s8k")]
-beat = 7
-bullet_prefab = ExtResource("3_p2s8k")
-
-[node name="BulletSpawner" parent="." instance=ExtResource("1_bd2xh")]
-
-[node name="BulletVolley" parent="BulletSpawner" instance=ExtResource("2_p2s8k")]
-bullet_prefab = ExtResource("3_p2s8k")

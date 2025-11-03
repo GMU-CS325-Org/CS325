@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ewulbntlwwa7"]
+[gd_scene load_steps=8 format=3 uid="uid://ewulbntlwwa7"]
 
 [ext_resource type="Script" uid="uid://34n6bcwd02wq" path="res://test_scene.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://bumudl2byvexc" path="res://bullet_container.gd" id="2_7cbxl"]
@@ -6,15 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://djvfumqdh38fe" path="res://sprites/background.png" id="6_7cbxl"]
 [ext_resource type="PackedScene" uid="uid://d1c83nndulhie" path="res://level/attacks/boxed_in.tscn" id="6_8pr8v"]
 [ext_resource type="PackedScene" uid="uid://qyt6aarjhobb" path="res://entities/enemy/enemy.tscn" id="7_8pr8v"]
+[ext_resource type="PackedScene" uid="uid://bdidelm8nfmk8" path="res://level/attacks/wall_of_pain.tscn" id="7_buypi"]
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_uhqqe")
 
 [node name="BulletContainer" type="Node2D" parent="." groups=["bullet_container"]]
 script = ExtResource("2_7cbxl")
-
-[node name="Player" parent="." instance=ExtResource("2_ia1lp")]
-position = Vector2(594, 471)
 
 [node name="HSlider" type="HSlider" parent="."]
 offset_left = 375.0
@@ -33,6 +31,14 @@ position = Vector2(577.111, 325.5)
 scale = Vector2(0.599074, 0.599074)
 texture = ExtResource("6_7cbxl")
 
+[node name="Player" parent="." instance=ExtResource("2_ia1lp")]
+position = Vector2(351, 428)
+
 [node name="boxed in" parent="." instance=ExtResource("6_8pr8v")]
+position = Vector2(-46, -9)
+
+[node name="TestPattern2" parent="." instance=ExtResource("7_buypi")]
+visible = false
+position = Vector2(-16, -25)
 
 [connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]

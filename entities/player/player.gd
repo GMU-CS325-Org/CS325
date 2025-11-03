@@ -8,8 +8,8 @@ static var instance : Player
 @export var boost_curve : Curve
 
 var boost_time : float = -1;
-
-
+var color : DamageComponent.DamageColor
+var current_body : AnimatedSprite2D
 
 #func _input(event: InputEvent) -> void:
 	#if event.is_action_pressed("boost") and boost_time < 0:
@@ -21,7 +21,14 @@ func _ready() -> void:
 	$HealthComponent.killed.connect(_on_death)
 	BeatSync.quarter_beat.connect(_quarter_beat)
 	$ticker.play("60_bpm")
-
+	color = DamageComponent.DamageColor.RED
+	current_body = $BodyRed
+	$BodyRed.show()
+	$BodyBlue.hide()
+	$HurtboxComponent.allowed_damage_colors.clear()
+	$HurtboxComponent.allowed_damage_colors.append(DamageComponent.DamageColor.BLUE)
+	$HurtboxComponent.allowed_damage_colors.append(DamageComponent.DamageColor.WHITE)
+	
 func _quarter_beat() -> void:
 	#$Sprite2D.scale = Vector2(0.6,0.6)
 	#boost_time = 0
@@ -30,7 +37,25 @@ func _quarter_beat() -> void:
 	pass
 
 
-
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("color_change"):
+		match color:
+			DamageComponent.DamageColor.RED:
+				## Turn Blue
+				color = DamageComponent.DamageColor.BLUE
+				$BodyRed.hide()
+				$BodyBlue.show()
+				$HurtboxComponent.allowed_damage_colors.clear()
+				$HurtboxComponent.allowed_damage_colors.append(DamageComponent.DamageColor.RED)
+				$HurtboxComponent.allowed_damage_colors.append(DamageComponent.DamageColor.WHITE)
+			DamageComponent.DamageColor.BLUE:
+				color = DamageComponent.DamageColor.RED
+				$BodyRed.show()
+				$BodyBlue.hide()
+				$HurtboxComponent.allowed_damage_colors.clear()
+				$HurtboxComponent.allowed_damage_colors.append(DamageComponent.DamageColor.BLUE)
+				$HurtboxComponent.allowed_damage_colors.append(DamageComponent.DamageColor.WHITE)
+		
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right","move_up", "move_down")
 	var total_speed : float = speed

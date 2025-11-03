@@ -8,6 +8,7 @@ func _ready() -> void:
 
 
 func on_hit() -> void:
+	print("hit coin")
 	var closest : Node2D
 	var closest_dist : float = 1000000
 	for target in get_tree().get_nodes_in_group("coin_shootable"):
