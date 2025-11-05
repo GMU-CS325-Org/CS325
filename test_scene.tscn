@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ewulbntlwwa7"]
+[gd_scene load_steps=7 format=3 uid="uid://ewulbntlwwa7"]
 
 [ext_resource type="Script" uid="uid://34n6bcwd02wq" path="res://test_scene.gd" id="1_uhqqe"]
-[ext_resource type="Script" uid="uid://bumudl2byvexc" path="res://bullet_container.gd" id="2_7cbxl"]
+[ext_resource type="Script" path="res://bullet_container.gd" id="2_7cbxl"]
 [ext_resource type="PackedScene" uid="uid://kiekkvdi5uqo" path="res://entities/player/player.tscn" id="2_ia1lp"]
 [ext_resource type="Texture2D" uid="uid://djvfumqdh38fe" path="res://sprites/background.png" id="6_7cbxl"]
+[ext_resource type="PackedScene" path="res://level/attacks/encircled.tscn" id="6_8pr8v"]
 [ext_resource type="PackedScene" uid="uid://qyt6aarjhobb" path="res://entities/enemy/enemy.tscn" id="7_8pr8v"]
 
 [node name="TestScene" type="Node2D"]
@@ -21,7 +22,6 @@ min_value = -100000.0
 max_value = 100000.0
 
 [node name="enemy" parent="." instance=ExtResource("7_8pr8v")]
-z_index = 1
 position = Vector2(586, 150)
 scale = Vector2(0.56, 0.56)
 
@@ -33,5 +33,7 @@ texture = ExtResource("6_7cbxl")
 
 [node name="Player" parent="." instance=ExtResource("2_ia1lp")]
 position = Vector2(581, 487)
+
+[node name="Encircled" parent="." instance=ExtResource("6_8pr8v")]
 
 [connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://48qgjeavte52"]
 
 [ext_resource type="Script" uid="uid://byjcgmrl6r1re" path="res://ui/main_menu.gd" id="1_0dkrt"]
-[ext_resource type="Texture2D" uid="uid://dnhhgr7ukfhtg" path="res://ui/Title Screen.png" id="1_t7e0r"]
+[ext_resource type="SpriteFrames" uid="uid://ee4n38hmp1lb" path="res://sprites/logo/logo_frames.tres" id="2_0dkrt"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +11,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0dkrt")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.85, 0.2125, 0.2125, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -820.0
+offset_top = -183.0
+offset_right = -820.0
+offset_bottom = -183.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.24179
+color = Color(0.2125, 0.2125, 0.85, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 296.0
+offset_top = -422.0
+offset_right = 296.0
+offset_bottom = -422.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.24179
+color = Color(0.2125, 0.2125, 0.85, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -33,10 +70,10 @@ text = "Options"
 layout_mode = 2
 text = "Exit Game"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(577, 325)
-texture = ExtResource("1_t7e0r")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(558, 160)
+sprite_frames = ExtResource("2_0dkrt")
+animation = &"60 bpm"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
