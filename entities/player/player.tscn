@@ -204,10 +204,12 @@ sprite_frames = ExtResource("2_qiwj3")
 animation = &"idle_blue"
 
 [node name="hitbox" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.159992, -13.16)
+position = Vector2(0, -12.8571)
 scale = Vector2(0.217998, 0.217998)
 sprite_frames = ExtResource("3_26q78")
 animation = &"idle"
+frame = 4
+frame_progress = 0.849588
 
 [node name="ticker" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.159992, -13.16)
@@ -226,10 +228,8 @@ allowed_damage_sources = Array[int]([1])
 allowed_damage_colors = Array[int]([0, 2])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, 0.637143)
+scale = Vector2(0.914286, 0.914286)
 shape = SubResource("CircleShape2D_mmk7k")
 
 [node name="PlayerWeapons" parent="." instance=ExtResource("5_fkugw")]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2.85714)
-scale = Vector2(0.84, 0.84)

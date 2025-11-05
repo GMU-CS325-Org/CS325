@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="1_1yn7j"]
 [ext_resource type="Script" uid="uid://d2gkpbmicg5b" path="res://entities/bullet_spawner/bullet_volley.gd" id="2_mrlrr"]
-[ext_resource type="PackedScene" uid="uid://b4s38uemperdx" path="res://entities/bullets/enemy/wiggly_enemy_bullet.tscn" id="3_7fd4h"]
+[ext_resource type="PackedScene" uid="uid://fxp01knde2fu" path="res://entities/bullets/enemy/wiggly_enemy_bullet.tscn" id="3_7fd4h"]
 
 [node name="dna_type1" type="Node2D"]
 

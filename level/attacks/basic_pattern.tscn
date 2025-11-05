@@ -57,12 +57,12 @@ metadata/_custom_type_script = "uid://d2gkpbmicg5b"
 
 [node name="BulletSpawner3" parent="." instance=ExtResource("1_gfwcm")]
 position = Vector2(560, 61)
-lifetime = 1
+lifetime = 3
 
 [node name="BulletVolley" type="Node2D" parent="BulletSpawner3"]
 script = ExtResource("2_hynvq")
 bullet_prefab = ExtResource("3_hynvq")
-color = 1
+color = 2
 targeted = true
 speed = 3.0
 metadata/_custom_type_script = "uid://d2gkpbmicg5b"
@@ -78,7 +78,7 @@ metadata/_custom_type_script = "uid://d2gkpbmicg5b"
 [node name="BulletVolley3" type="Node2D" parent="BulletSpawner3"]
 script = ExtResource("2_hynvq")
 bullet_prefab = ExtResource("3_hynvq")
-color = 1
+color = 2
 targeted = true
 speed = 5.0
 metadata/_custom_type_script = "uid://d2gkpbmicg5b"
@@ -93,16 +93,16 @@ metadata/_custom_type_script = "uid://d2gkpbmicg5b"
 
 [node name="BulletVolley5" type="Node2D" parent="BulletSpawner3"]
 script = ExtResource("2_hynvq")
-beat = 1
+beat = 2
 bullet_prefab = ExtResource("3_hynvq")
-color = 2
+color = 1
 targeted = true
 speed = 3.0
 metadata/_custom_type_script = "uid://d2gkpbmicg5b"
 
 [node name="BulletVolley6" type="Node2D" parent="BulletSpawner3"]
 script = ExtResource("2_hynvq")
-beat = 1
+beat = 2
 bullet_prefab = ExtResource("3_hynvq")
 color = 1
 targeted = true
@@ -111,16 +111,16 @@ metadata/_custom_type_script = "uid://d2gkpbmicg5b"
 
 [node name="BulletVolley7" type="Node2D" parent="BulletSpawner3"]
 script = ExtResource("2_hynvq")
-beat = 1
+beat = 2
 bullet_prefab = ExtResource("3_hynvq")
-color = 2
+color = 1
 targeted = true
 speed = 5.0
 metadata/_custom_type_script = "uid://d2gkpbmicg5b"
 
 [node name="BulletVolley8" type="Node2D" parent="BulletSpawner3"]
 script = ExtResource("2_hynvq")
-beat = 1
+beat = 2
 bullet_prefab = ExtResource("3_hynvq")
 color = 1
 targeted = true

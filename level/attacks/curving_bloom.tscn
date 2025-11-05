@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu8tgmln787yt"]
+
+[ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="1_4x310"]
+[ext_resource type="Script" uid="uid://d2gkpbmicg5b" path="res://entities/bullet_spawner/bullet_volley.gd" id="2_a3n38"]
+[ext_resource type="PackedScene" uid="uid://5earkhxx2o7l" path="res://entities/bullets/enemy/curved_enemy_bullet.tscn" id="3_ea6s5"]
+[ext_resource type="PackedScene" uid="uid://bpunhsi3rwh0u" path="res://entities/bullets/enemy/basic_enemy_bullet.tscn" id="4_a53st"]
+
+[node name="Curving Bloom" type="Node2D"]
+
+[node name="BulletSpawner" parent="." instance=ExtResource("1_4x310")]
+position = Vector2(586, 160)
+lifetime = 3
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner"]
+script = ExtResource("2_a3n38")
+bullet_prefab = ExtResource("3_ea6s5")
+color = 1
+targeted = true
+quantity = 60
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner"]
+script = ExtResource("2_a3n38")
+beat = 2
+bullet_prefab = ExtResource("3_ea6s5")
+color = 2
+targeted = true
+quantity = 60
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletSpawner2" parent="." instance=ExtResource("1_4x310")]
+position = Vector2(221, 160)
+lifetime = 2
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner2"]
+script = ExtResource("2_a3n38")
+bullet_prefab = ExtResource("4_a53st")
+color = 1
+targeted = true
+quantity = 5
+spacing_degrees = 5.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletSpawner3" parent="." instance=ExtResource("1_4x310")]
+position = Vector2(974, 160)
+lifetime = 2
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner3"]
+script = ExtResource("2_a3n38")
+bullet_prefab = ExtResource("4_a53st")
+color = 2
+targeted = true
+quantity = 5
+spacing_degrees = 5.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
