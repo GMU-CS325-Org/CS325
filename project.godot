@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="CS325"
+run/main_scene="uid://48qgjeavte52"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
