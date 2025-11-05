@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://ca4ah1ppk4u4h"]
+
+[ext_resource type="Script" uid="uid://buknw0j74r3ak" path="res://entities/bullets/bullet.gd" id="1_glnrj"]
+[ext_resource type="Texture2D" uid="uid://c66ob5emcoas8" path="res://sprites/bullets/spr_colorless_bar.png" id="2_glnrj"]
+[ext_resource type="Texture2D" uid="uid://3uxuy7ylwpso" path="res://sprites/bullets/spr_red_bar.png" id="3_eewhm"]
+[ext_resource type="Texture2D" uid="uid://cep13g63ylhho" path="res://sprites/bullets/spr_blue_bar.png" id="4_uk6n8"]
+[ext_resource type="PackedScene" uid="uid://007x0lj0h4n0" path="res://components/damage/damage_component.tscn" id="5_5mnq5"]
+[ext_resource type="PackedScene" uid="uid://dilob6o2f1c0t" path="res://components/movement/linear_bullet_movement_component.tscn" id="6_3pfcj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nyfm"]
+size = Vector2(18.75, 18.75)
+
+[node name="Bullet" type="Area2D" node_paths=PackedStringArray("damage_component")]
+script = ExtResource("1_glnrj")
+speed = 300.0
+damage_component = NodePath("DamageComponent")
+color_sprites = Array[Texture]([ExtResource("2_glnrj"), ExtResource("3_eewhm"), ExtResource("4_uk6n8")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_glnrj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.96, 0.96)
+shape = SubResource("RectangleShape2D_3nyfm")
+
+[node name="DamageComponent" parent="." instance=ExtResource("5_5mnq5")]
+source = 1
+damage = 1
+
+[node name="LinearBulletMovementComponent" parent="." node_paths=PackedStringArray("bullet") instance=ExtResource("6_3pfcj")]
+bullet = NodePath("..")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

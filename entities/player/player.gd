@@ -68,7 +68,7 @@ func _physics_process(delta: float) -> void:
 		
 	velocity = direction*total_speed
 	if (Input.is_action_pressed("focus")):
-		velocity *= 0.5
+		velocity *= 0.35
 	#print(total_speed)
 	move_and_slide()
 

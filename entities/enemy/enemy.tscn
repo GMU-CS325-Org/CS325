@@ -1,19 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://qyt6aarjhobb"]
 
 [ext_resource type="Script" uid="uid://be74u86jhe7fp" path="res://entities/enemy/enemy.gd" id="1_dt443"]
-[ext_resource type="Texture2D" uid="uid://byp28ctryfjcj" path="res://sprites/Cactus.png" id="2_dt443"]
 [ext_resource type="PackedScene" uid="uid://hiyp7n7uvc4m" path="res://components/health/health_component.tscn" id="3_d50e0"]
 [ext_resource type="PackedScene" uid="uid://b7d3oiw27awag" path="res://components/hurtbox/hurtbox_component.tscn" id="4_61ikd"]
+[ext_resource type="SpriteFrames" uid="uid://dcs17e87ckhsc" path="res://sprites/trumpet gal/trumpet_gal_frames.tres" id="4_dt443"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_721x4"]
 radius = 99.2018
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_dt443")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4.63929, 4.63929)
-texture = ExtResource("2_dt443")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_d50e0")]
 max_health = 100
@@ -25,3 +21,8 @@ allowed_damage_colors = Array[int]([0])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
 shape = SubResource("CircleShape2D_721x4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -42)
+sprite_frames = ExtResource("4_dt443")
+animation = &"idle"

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dyccf13cnom4j" path="res://sprites/bullets/spr_red_bullet.png" id="3_etm3o"]
 [ext_resource type="Texture2D" uid="uid://de3eobkvftrue" path="res://sprites/bullets/spr_blue_bullet.png" id="4_asabw"]
 [ext_resource type="PackedScene" uid="uid://007x0lj0h4n0" path="res://components/damage/damage_component.tscn" id="5_wv8uj"]
-[ext_resource type="PackedScene" path="res://components/movement/curved_bullet_movement_component.tscn" id="6_h755w"]
+[ext_resource type="PackedScene" uid="uid://iqiyvpp7hsqc" path="res://components/movement/curved_bullet_movement_component.tscn" id="6_h755w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5rc4h"]
 radius = 9.0
@@ -24,7 +24,7 @@ color_sprites = Array[Texture]([ExtResource("2_h755w"), ExtResource("3_etm3o"), 
 texture = ExtResource("2_h755w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.56, 1)
+scale = Vector2(0.96, 0.96)
 shape = SubResource("CircleShape2D_5rc4h")
 
 [node name="DamageComponent" parent="." instance=ExtResource("5_wv8uj")]

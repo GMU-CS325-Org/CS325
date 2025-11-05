@@ -20,6 +20,7 @@ color_sprites = Array[Texture]([ExtResource("2_owwvi"), ExtResource("3_tji7f"), 
 texture = ExtResource("2_owwvi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.96, 0.96)
 shape = SubResource("CircleShape2D_5rc4h")
 
 [node name="DamageComponent" parent="." instance=ExtResource("5_128ds")]
