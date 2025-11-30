@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://48qgjeavte52"]
+[gd_scene load_steps=3 format=3 uid="uid://48qgjeavte52"]
 
 [ext_resource type="Script" uid="uid://byjcgmrl6r1re" path="res://ui/main_menu.gd" id="1_0dkrt"]
 [ext_resource type="SpriteFrames" uid="uid://ee4n38hmp1lb" path="res://sprites/logo/logo_frames.tres" id="2_0dkrt"]
-[ext_resource type="AudioStream" uid="uid://c7o3sqoy6nnf0" path="res://level/music/Good Eatin.mp3" id="3_wk0pr"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -52,12 +51,40 @@ color = Color(0.2125, 0.2125, 0.85, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-offset_left = 293.0
-offset_top = 452.0
-offset_right = 825.0
-offset_bottom = 623.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -266.0
+offset_top = -309.0
+offset_right = 266.0
+grow_horizontal = 2
+grow_vertical = 0
 alignment = 1
+
+[node name="TimingOffset" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Timing Offset: "
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+min_value = -400000.0
+max_value = 400000.0
+
+[node name="TestButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Test
+"
+
+[node name="Feedback" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
 
 [node name="Stage1" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -84,10 +111,8 @@ position = Vector2(558, 160)
 sprite_frames = ExtResource("2_0dkrt")
 animation = &"60 bpm"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_wk0pr")
-autoplay = true
-
+[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_timing_offset_change"]
+[connection signal="button_down" from="VBoxContainer/TestButton" to="." method="_on_test_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Stage1" to="." method="_on_stage_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Stage2" to="." method="_on_stage_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Stage3" to="." method="_on_stage_3_pressed"]
