@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://dkaxrmpq5ikhf"]
+
+[ext_resource type="Script" uid="uid://b4lopqu14nk7" path="res://level/level_data/level_data.gd" id="1_fo8ep"]
+[ext_resource type="AudioStream" uid="uid://dfvqrh34j4tp" path="res://level/music/Universal Collapse.mp3" id="2_fo8ep"]
+
+[resource]
+script = ExtResource("1_fo8ep")
+song = ExtResource("2_fo8ep")
+bpm = 200
+first_note_time = 0.0
+metadata/_custom_type_script = "uid://b4lopqu14nk7"

@@ -21,5 +21,7 @@ func rapid_fire(note : BeatSync.Note):
 			print(note," early")
 		BeatSync.Timing.GOOD:
 			raycast_shoot(global_position.direction_to(get_global_mouse_position()),$DamageComponent)
+			$AnimatedSprite2D.play()
+			$"Tri Fire".play()
 		BeatSync.Timing.LATE:
 			print(note," late")

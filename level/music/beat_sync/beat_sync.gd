@@ -45,7 +45,7 @@ func play(level : LevelData):
 	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
 	$SongPlayer.play()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if current_level == null:
 		return;
 	
@@ -92,4 +92,6 @@ func get_timing(note : Note) -> Timing:
 	
 	return Timing.GOOD
 	
-	
+
+func get_bpm():
+	return current_level.bpm

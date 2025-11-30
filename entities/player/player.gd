@@ -7,6 +7,7 @@ static var instance : Player
 
 @export var boost_curve : Curve
 
+
 var boost_time : float = -1;
 var color : DamageComponent.DamageColor
 var current_body : AnimatedSprite2D
@@ -21,6 +22,9 @@ func _ready() -> void:
 	$HealthComponent.killed.connect(_on_death)
 	BeatSync.quarter_beat.connect(_quarter_beat)
 	$ticker.play("60_bpm")
+	$BodyRed.play("idle")
+	$BodyBlue.play("idle")
+	$hitbox.play("idle")
 	color = DamageComponent.DamageColor.RED
 	current_body = $BodyRed
 	$BodyRed.show()
@@ -56,9 +60,10 @@ func _input(event: InputEvent) -> void:
 				$HurtboxComponent.allowed_damage_colors.append(DamageComponent.DamageColor.BLUE)
 				$HurtboxComponent.allowed_damage_colors.append(DamageComponent.DamageColor.WHITE)
 		
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right","move_up", "move_down")
 	var total_speed : float = speed
+	animating()
 	
 	#if boost_time >= 0:
 		#total_speed += boost_curve.sample(boost_time)
@@ -74,3 +79,18 @@ func _physics_process(delta: float) -> void:
 
 func _on_death() -> void:
 	get_tree().reload_current_scene()
+
+func animating():
+	if velocity.x > 0:
+		$BodyRed.play("move_right")
+		$BodyBlue.play("move_right")
+	elif velocity.x < 0:
+		$BodyRed.play("move_left")
+		$BodyBlue.play("move_left")
+	else: 
+		$BodyRed.play("idle")
+		$BodyBlue.play("idle")
+
+
+func _on_health_component_killed() -> void:
+	$death.play()

@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cind6ta211h8t"]
+[gd_scene load_steps=4 format=3 uid="uid://cind6ta211h8t"]
 
 [ext_resource type="Script" uid="uid://biyqx7368bwng" path="res://entities/bullet_spawner/bullet_spawner.gd" id="1_u56jr"]
 [ext_resource type="Texture2D" uid="uid://byp28ctryfjcj" path="res://sprites/Cactus.png" id="2_p35od"]
+[ext_resource type="Texture2D" uid="uid://bdx7bominl6ae" path="res://sprites/bullets/spell.png" id="3_b0kq4"]
 
 [node name="BulletSpawner" type="Node2D"]
 script = ExtResource("1_u56jr")
+
+[node name="spell" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
+texture = ExtResource("3_b0kq4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_p35od")

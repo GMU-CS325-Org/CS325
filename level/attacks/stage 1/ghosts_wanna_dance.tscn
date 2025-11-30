@@ -1,0 +1,204 @@
+[gd_scene load_steps=5 format=3 uid="uid://eumbcc2tr4ji"]
+
+[ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="1_i2amt"]
+[ext_resource type="Script" uid="uid://d2gkpbmicg5b" path="res://entities/bullet_spawner/bullet_volley.gd" id="2_rgj60"]
+[ext_resource type="PackedScene" uid="uid://5earkhxx2o7l" path="res://entities/bullets/enemy/curved_enemy_bullet.tscn" id="3_i2amt"]
+[ext_resource type="PackedScene" uid="uid://fxp01knde2fu" path="res://entities/bullets/enemy/wiggly_enemy_bullet.tscn" id="4_i2amt"]
+
+[node name="Ghosts Just Wanna Dance" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [324.0]
+metadata/_edit_vertical_guides_ = [576.0]
+
+[node name="BulletSpawner2" parent="." instance=ExtResource("1_i2amt")]
+position = Vector2(144, 0)
+lifetime = 5
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner2"]
+script = ExtResource("2_rgj60")
+bullet_prefab = ExtResource("3_i2amt")
+targeted = true
+quantity = 2
+offset_degrees = -45.0
+spacing_degrees = 10.0
+speed = 4.0
+curved = 1.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner2"]
+script = ExtResource("2_rgj60")
+beat = 1
+bullet_prefab = ExtResource("3_i2amt")
+targeted = true
+quantity = 2
+offset_degrees = -45.0
+spacing_degrees = 10.0
+speed = 4.0
+curved = 1.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley3" type="Node2D" parent="BulletSpawner2"]
+script = ExtResource("2_rgj60")
+beat = 2
+bullet_prefab = ExtResource("3_i2amt")
+targeted = true
+quantity = 2
+offset_degrees = -45.0
+spacing_degrees = 10.0
+speed = 4.0
+curved = 1.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletSpawner3" parent="." instance=ExtResource("1_i2amt")]
+position = Vector2(1008, 0)
+lifetime = 5
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner3"]
+script = ExtResource("2_rgj60")
+beat = 3
+bullet_prefab = ExtResource("3_i2amt")
+targeted = true
+quantity = 2
+offset_degrees = 45.0
+spacing_degrees = 10.0
+speed = 4.0
+curved = -1.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner3"]
+script = ExtResource("2_rgj60")
+beat = 4
+bullet_prefab = ExtResource("3_i2amt")
+targeted = true
+quantity = 2
+offset_degrees = 45.0
+spacing_degrees = 10.0
+speed = 4.0
+curved = -1.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley3" type="Node2D" parent="BulletSpawner3"]
+script = ExtResource("2_rgj60")
+beat = 5
+bullet_prefab = ExtResource("3_i2amt")
+targeted = true
+quantity = 2
+offset_degrees = 45.0
+spacing_degrees = 10.0
+speed = 4.0
+curved = -1.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="wiggle wave" parent="." instance=ExtResource("1_i2amt")]
+position = Vector2(288, 162)
+lifetime = 14
+start_beat = 2
+
+[node name="BulletVolley" type="Node2D" parent="wiggle wave"]
+script = ExtResource("2_rgj60")
+bullet_prefab = ExtResource("4_i2amt")
+targeted = true
+speed = 4.0
+wiggle_freq = 5.0
+wiggle_dist = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="wiggle wave"]
+script = ExtResource("2_rgj60")
+beat = 1
+bullet_prefab = ExtResource("4_i2amt")
+targeted = true
+speed = 4.0
+wiggle_freq = 5.0
+wiggle_dist = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley3" type="Node2D" parent="wiggle wave"]
+script = ExtResource("2_rgj60")
+beat = 2
+bullet_prefab = ExtResource("4_i2amt")
+targeted = true
+speed = 4.0
+wiggle_freq = 5.0
+wiggle_dist = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley4" type="Node2D" parent="wiggle wave"]
+script = ExtResource("2_rgj60")
+beat = 3
+bullet_prefab = ExtResource("4_i2amt")
+targeted = true
+speed = 4.0
+wiggle_freq = 5.0
+wiggle_dist = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="wiggle wave 2" parent="." instance=ExtResource("1_i2amt")]
+position = Vector2(864, 162)
+lifetime = 14
+start_beat = 2
+
+[node name="BulletVolley" type="Node2D" parent="wiggle wave 2"]
+script = ExtResource("2_rgj60")
+beat = 7
+bullet_prefab = ExtResource("4_i2amt")
+targeted = true
+speed = 4.0
+wiggle_freq = 5.0
+wiggle_dist = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="wiggle wave 2"]
+script = ExtResource("2_rgj60")
+beat = 8
+bullet_prefab = ExtResource("4_i2amt")
+targeted = true
+speed = 4.0
+wiggle_freq = 5.0
+wiggle_dist = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley3" type="Node2D" parent="wiggle wave 2"]
+script = ExtResource("2_rgj60")
+beat = 9
+bullet_prefab = ExtResource("4_i2amt")
+targeted = true
+speed = 4.0
+wiggle_freq = 5.0
+wiggle_dist = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley4" type="Node2D" parent="wiggle wave 2"]
+script = ExtResource("2_rgj60")
+beat = 10
+bullet_prefab = ExtResource("4_i2amt")
+targeted = true
+speed = 4.0
+wiggle_freq = 5.0
+wiggle_dist = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wave" parent="." instance=ExtResource("1_i2amt")]
+position = Vector2(0, 648)
+rotation = -1.5708
+start_beat = 2
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wave"]
+script = ExtResource("2_rgj60")
+bullet_prefab = ExtResource("4_i2amt")
+speed = 4.0
+wiggle_freq = 5.0
+wiggle_dist = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wave2" parent="." instance=ExtResource("1_i2amt")]
+position = Vector2(1352, 648)
+rotation = 1.5708
+start_beat = 2
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wave2"]
+script = ExtResource("2_rgj60")
+bullet_prefab = ExtResource("4_i2amt")
+speed = 4.0
+wiggle_freq = 5.0
+wiggle_dist = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"

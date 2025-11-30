@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://b42uw8uhddflh"]
+
+[ext_resource type="Script" uid="uid://btm7hcfdo7kps" path="res://entities/enemy/pattern_enemy.gd" id="1_4wuy8"]
+[ext_resource type="PackedScene" uid="uid://hiyp7n7uvc4m" path="res://components/health/health_component.tscn" id="2_1osf3"]
+[ext_resource type="PackedScene" uid="uid://b7d3oiw27awag" path="res://components/hurtbox/hurtbox_component.tscn" id="3_lmpdd"]
+[ext_resource type="Texture2D" uid="uid://ec4rwo328qfs" path="res://sprites/rat/rat_0001.png" id="4_yflcb"]
+[ext_resource type="Texture2D" uid="uid://xdybr2qfu8ap" path="res://sprites/rat/rat_0002.png" id="5_ky5fh"]
+[ext_resource type="Texture2D" uid="uid://dthx11fida3y1" path="res://sprites/rat/rat_0003.png" id="6_dvra5"]
+[ext_resource type="Texture2D" uid="uid://10ih44omw2cb" path="res://sprites/rat/rat_0004.png" id="7_gja0w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpkr5"]
+size = Vector2(44, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5fftw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_yflcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ky5fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dvra5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gja0w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[node name="enemy" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 3
+script = ExtResource("1_4wuy8")
+hp = 10
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_1osf3")]
+max_health = 5
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") groups=["coin_shootable"] instance=ExtResource("3_lmpdd")]
+collision_layer = 3
+health_component = NodePath("../HealthComponent")
+allowed_damage_sources = Array[int]([0])
+allowed_damage_colors = Array[int]([0])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_dpkr5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(-1, 10)
+sprite_frames = SubResource("SpriteFrames_5fftw")
+animation = &"idle"

@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://d1kpkif2jrhj7"]
 
 [ext_resource type="Script" uid="uid://buknw0j74r3ak" path="res://entities/bullets/bullet.gd" id="1_clcay"]
-[ext_resource type="Texture2D" uid="uid://vi8b4yxy6ghe" path="res://sprites/spr_colorless_bullet.png" id="2_nfaxc"]
-[ext_resource type="Texture2D" uid="uid://dyccf13cnom4j" path="res://sprites/spr_red_bullet.png" id="3_pj5dt"]
-[ext_resource type="Texture2D" uid="uid://de3eobkvftrue" path="res://sprites/spr_blue_bullet.png" id="4_ou3ld"]
+[ext_resource type="Texture2D" uid="uid://vi8b4yxy6ghe" path="res://sprites/bullets/spr_colorless_bullet.png" id="2_nfaxc"]
+[ext_resource type="Texture2D" uid="uid://dyccf13cnom4j" path="res://sprites/bullets/spr_red_bullet.png" id="3_pj5dt"]
+[ext_resource type="Texture2D" uid="uid://de3eobkvftrue" path="res://sprites/bullets/spr_blue_bullet.png" id="4_ou3ld"]
 [ext_resource type="PackedScene" uid="uid://007x0lj0h4n0" path="res://components/damage/damage_component.tscn" id="5_t2yro"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5tit"]

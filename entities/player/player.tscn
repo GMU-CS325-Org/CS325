@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://kiekkvdi5uqo"]
+[gd_scene load_steps=53 format=3 uid="uid://kiekkvdi5uqo"]
 
 [ext_resource type="Script" uid="uid://ch02l7yb2hqh6" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://by1qt5jhsn15e" path="res://sprites/player/idle_red_0001.png" id="2_mmk7k"]
@@ -45,6 +45,9 @@
 [ext_resource type="Texture2D" uid="uid://dwtmwolub3wiv" path="res://sprites/player/right_red_0011.png" id="37_u8til"]
 [ext_resource type="Texture2D" uid="uid://c7oow3uyxknw" path="res://sprites/player/right_red_0012.png" id="38_qydng"]
 [ext_resource type="Texture2D" uid="uid://blytwwco0o57r" path="res://sprites/player/right_red_0013.png" id="39_1bn7s"]
+[ext_resource type="Texture2D" uid="uid://vi8b4yxy6ghe" path="res://sprites/bullets/spr_colorless_bullet.png" id="43_g3pa7"]
+[ext_resource type="AudioStream" uid="uid://ble0vc0juei6m" path="res://sounds/hurt.wav" id="47_7otdo"]
+[ext_resource type="AudioStream" uid="uid://dud1dx8p16j47" path="res://sounds/death.wav" id="48_c112w"]
 
 [sub_resource type="Curve" id="Curve_abrql"]
 _limits = [0.0, 200.0, 0.0, 0.5]
@@ -186,8 +189,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_mmk7k"]
 radius = 2.91
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmk7k"]
+size = Vector2(12.1429, 32.8571)
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(1.4, 1.4)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_symyc")
 boost_curve = SubResource("Curve_abrql")
 
@@ -201,7 +209,7 @@ animation = &"idle"
 position = Vector2(-0.159992, -13.16)
 scale = Vector2(0.28, 0.28)
 sprite_frames = ExtResource("2_qiwj3")
-animation = &"idle_blue"
+animation = &"idle"
 
 [node name="hitbox" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12.8571)
@@ -216,7 +224,16 @@ position = Vector2(-0.159992, -13.16)
 scale = Vector2(0.28, 0.28)
 sprite_frames = ExtResource("4_bectd")
 animation = &"60_bpm"
+frame = 24
+frame_progress = 0.63093
 speed_scale = 2.466
+
+[node name="i-frames" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.478431)
+position = Vector2(0, -7.85714)
+scale = Vector2(3.3961, 3.3961)
+texture = ExtResource("43_g3pa7")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_sglur")]
 max_health = 5
@@ -233,3 +250,18 @@ scale = Vector2(0.914286, 0.914286)
 shape = SubResource("CircleShape2D_mmk7k")
 
 [node name="PlayerWeapons" parent="." instance=ExtResource("5_fkugw")]
+position = Vector2(0, -80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.07143, -15)
+shape = SubResource("RectangleShape2D_mmk7k")
+
+[node name="hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("47_7otdo")
+volume_db = -5.0
+
+[node name="death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("48_c112w")
+volume_db = -5.0
+
+[connection signal="killed" from="HealthComponent" to="." method="_on_health_component_killed"]

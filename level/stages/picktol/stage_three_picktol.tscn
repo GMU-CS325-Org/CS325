@@ -1,0 +1,89 @@
+[gd_scene load_steps=17 format=3 uid="uid://de2lsycuw31yx"]
+
+[ext_resource type="Script" uid="uid://dhtukj50i3x2w" path="res://level/stages/level.gd" id="1_433mn"]
+[ext_resource type="Script" uid="uid://bumudl2byvexc" path="res://bullet_container.gd" id="2_ebt7l"]
+[ext_resource type="PackedScene" uid="uid://qyt6aarjhobb" path="res://entities/enemy/enemy.tscn" id="3_ojb5y"]
+[ext_resource type="Texture2D" uid="uid://djvfumqdh38fe" path="res://sprites/background.png" id="4_3bt4q"]
+[ext_resource type="PackedScene" uid="uid://kiekkvdi5uqo" path="res://entities/player/player.tscn" id="5_6jlym"]
+[ext_resource type="Script" uid="uid://buq1uqxcd57nv" path="res://bullet_pattern_switch.gd" id="6_dsjej"]
+[ext_resource type="PackedScene" uid="uid://cak0f4m5lphhj" path="res://level/attacks/stage 3/opener.tscn" id="7_n3o0x"]
+[ext_resource type="PackedScene" uid="uid://c05jtbwm3luk5" path="res://level/attacks/stage 3/dna_type1.tscn" id="8_ebt7l"]
+[ext_resource type="PackedScene" uid="uid://bdidelm8nfmk8" path="res://level/attacks/stage 3/wall_of_pain.tscn" id="9_ojb5y"]
+[ext_resource type="PackedScene" uid="uid://b67xobhckjefr" path="res://level/attacks/stage 3/needle_rain.tscn" id="10_3bt4q"]
+[ext_resource type="PackedScene" uid="uid://dl5m0qes2s33s" path="res://level/attacks/stage 3/ensnared.tscn" id="11_6jlym"]
+[ext_resource type="PackedScene" uid="uid://edbehurulvar" path="res://level/attacks/stage 3/final_warning.tscn" id="12_dsjej"]
+[ext_resource type="PackedScene" uid="uid://cjc4ah1di8n2x" path="res://level/attacks/stage 3/finale.tscn" id="13_yxyjq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2nij2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nij2"]
+size = Vector2(1165, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cbxl"]
+size = Vector2(20, 658)
+
+[node name="stage_three" type="Node2D"]
+script = ExtResource("1_433mn")
+stage = "res://level/level_data/stage_three.tres"
+
+[node name="BulletContainer" type="Node2D" parent="." groups=["bullet_container"]]
+script = ExtResource("2_ebt7l")
+
+[node name="enemy" parent="." instance=ExtResource("3_ojb5y")]
+position = Vector2(586, 150)
+scale = Vector2(0.56, 0.56)
+sprites = 2
+
+[node name="HealthComponent" parent="enemy" index="0"]
+max_health = 340
+
+[node name="background" type="Sprite2D" parent="."]
+modulate = Color(0.281187, 0.281187, 0.281187, 1)
+z_index = -6
+position = Vector2(575, 323)
+scale = Vector2(0.601871, 0.601871)
+texture = ExtResource("4_3bt4q")
+
+[node name="Player" parent="." instance=ExtResource("5_6jlym")]
+position = Vector2(581, 569)
+
+[node name="HealthComponent" parent="Player" index="5"]
+max_health = 12
+
+[node name="walls" type="StaticBody2D" parent="."]
+position = Vector2(2, 0)
+collision_layer = 4
+collision_mask = 4
+collision_priority = 3.0
+physics_material_override = SubResource("PhysicsMaterial_2nij2")
+
+[node name="top" type="CollisionShape2D" parent="walls"]
+position = Vector2(573, -10)
+shape = SubResource("RectangleShape2D_2nij2")
+
+[node name="bottom" type="CollisionShape2D" parent="walls"]
+position = Vector2(573, 658)
+shape = SubResource("RectangleShape2D_2nij2")
+
+[node name="left" type="CollisionShape2D" parent="walls"]
+position = Vector2(-12, 319)
+shape = SubResource("RectangleShape2D_7cbxl")
+
+[node name="right" type="CollisionShape2D" parent="walls"]
+position = Vector2(1161, 319)
+shape = SubResource("RectangleShape2D_7cbxl")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("6_dsjej")
+patterns = Array[PackedScene]([ExtResource("7_n3o0x"), ExtResource("8_ebt7l"), ExtResource("9_ojb5y"), ExtResource("10_3bt4q"), ExtResource("11_6jlym"), ExtResource("12_dsjej"), ExtResource("13_yxyjq")])
+thresholds = Array[int]([280, 230, 180, 130, 80, 70, 0])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -3
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[editable path="enemy"]
+[editable path="Player"]

@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnky1p56jka1p"]
+[gd_scene load_steps=11 format=3 uid="uid://dnky1p56jka1p"]
 
 [ext_resource type="Script" uid="uid://du8wu7ynhreba" path="res://entities/player/weapons/player_weapons.gd" id="1_b66g0"]
 [ext_resource type="Script" uid="uid://bay6gfjebpb5j" path="res://entities/player/weapons/picktol.gd" id="2_234d4"]
 [ext_resource type="Script" uid="uid://dbmkrehfiy60g" path="res://entities/player/weapons/triangle.gd" id="3_sju1t"]
 [ext_resource type="PackedScene" uid="uid://c1e6eg55m3270" path="res://entities/bullets/player/player_coin.tscn" id="3_wix3d"]
 [ext_resource type="PackedScene" uid="uid://007x0lj0h4n0" path="res://components/damage/damage_component.tscn" id="4_wix3d"]
+[ext_resource type="SpriteFrames" uid="uid://ctyuvyo8r27pk" path="res://sprites/picktol/picktol frames.tres" id="5_50tw5"]
+[ext_resource type="AudioStream" uid="uid://8y6fs25m5wqw" path="res://sounds/laz.wav" id="6_70m1c"]
+[ext_resource type="SpriteFrames" uid="uid://cjuhtmeorjqc3" path="res://sprites/triangle/triangle.tres" id="7_7r7ja"]
+[ext_resource type="AudioStream" uid="uid://3om26bjq27wj" path="res://sounds/stardrop.wav" id="7_hxmqr"]
+[ext_resource type="AudioStream" uid="uid://d3027eoefq1mh" path="res://sounds/Ding - Sound Effect [Fu82s5DnhBc].mp3" id="8_mb3cx"]
 
 [node name="PlayerWeapons" type="Node2D"]
 script = ExtResource("1_b66g0")
@@ -15,19 +20,42 @@ coin = ExtResource("3_wix3d")
 
 [node name="RayCast2D" type="RayCast2D" parent="Picktol"]
 target_position = Vector2(0, 0)
+collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="PistolDamageComponent" parent="Picktol" instance=ExtResource("4_wix3d")]
 damage = 1
 
+[node name="picktol_sprite" type="AnimatedSprite2D" parent="Picktol"]
+scale = Vector2(0.328125, 0.328125)
+sprite_frames = ExtResource("5_50tw5")
+animation = &"idle"
+
+[node name="Strum" type="AudioStreamPlayer" parent="Picktol"]
+stream = ExtResource("6_70m1c")
+volume_db = -20.0
+
+[node name="Flick" type="AudioStreamPlayer" parent="Picktol"]
+stream = ExtResource("7_hxmqr")
+volume_db = -20.0
+
 [node name="Triangle" type="Node2D" parent="."]
 script = ExtResource("3_sju1t")
 
 [node name="RayCast2D" type="RayCast2D" parent="Triangle"]
 target_position = Vector2(0, 0)
+collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="DamageComponent" parent="Triangle" instance=ExtResource("4_wix3d")]
 damage = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Triangle"]
+scale = Vector2(0.328, 0.328)
+sprite_frames = ExtResource("7_7r7ja")
+animation = &"firing"
+
+[node name="Tri Fire" type="AudioStreamPlayer" parent="Triangle"]
+stream = ExtResource("8_mb3cx")

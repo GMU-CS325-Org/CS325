@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://obl2uxp0undo"
+path="res://.godot/imported/Ultimate Legend of the Untrained Demon King.mp3-6b277191be9abef43cc395414ba3699c.mp3str"
+
+[deps]
+
+source_file="res://level/music/Ultimate Legend of the Untrained Demon King.mp3"
+dest_files=["res://.godot/imported/Ultimate Legend of the Untrained Demon King.mp3-6b277191be9abef43cc395414ba3699c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=7.999
+bpm=0.0
+beat_count=0
+bar_beats=4
