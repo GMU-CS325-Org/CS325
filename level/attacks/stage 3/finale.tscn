@@ -1,0 +1,189 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjc4ah1di8n2x"]
+
+[ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="1_1p8sj"]
+[ext_resource type="Script" uid="uid://d2gkpbmicg5b" path="res://entities/bullet_spawner/bullet_volley.gd" id="2_jdpr3"]
+[ext_resource type="PackedScene" uid="uid://5earkhxx2o7l" path="res://entities/bullets/enemy/curved_enemy_bullet.tscn" id="3_e4xwo"]
+[ext_resource type="PackedScene" uid="uid://bpunhsi3rwh0u" path="res://entities/bullets/enemy/basic_enemy_bullet.tscn" id="4_oo1ri"]
+
+[node name="Flowering Bloom" type="Node2D"]
+
+[node name="flower" parent="." instance=ExtResource("1_1p8sj")]
+position = Vector2(586, 160)
+lifetime = 7
+
+[node name="BulletVolley" type="Node2D" parent="flower"]
+script = ExtResource("2_jdpr3")
+lifetime = 40
+bullet_prefab = ExtResource("3_e4xwo")
+color = 1
+targeted = true
+quantity = 45
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="flower"]
+script = ExtResource("2_jdpr3")
+beat = 4
+lifetime = 40
+bullet_prefab = ExtResource("3_e4xwo")
+color = 2
+targeted = true
+quantity = 45
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="flower4" parent="." instance=ExtResource("1_1p8sj")]
+position = Vector2(586, 260)
+lifetime = 7
+
+[node name="BulletVolley" type="Node2D" parent="flower4"]
+script = ExtResource("2_jdpr3")
+lifetime = 40
+bullet_prefab = ExtResource("3_e4xwo")
+color = 1
+targeted = true
+quantity = 45
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="flower4"]
+script = ExtResource("2_jdpr3")
+beat = 4
+lifetime = 40
+bullet_prefab = ExtResource("3_e4xwo")
+color = 2
+targeted = true
+quantity = 45
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="flower3" parent="." instance=ExtResource("1_1p8sj")]
+position = Vector2(586, 60)
+lifetime = 7
+
+[node name="BulletVolley" type="Node2D" parent="flower3"]
+script = ExtResource("2_jdpr3")
+lifetime = 40
+bullet_prefab = ExtResource("3_e4xwo")
+color = 1
+targeted = true
+quantity = 45
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="flower3"]
+script = ExtResource("2_jdpr3")
+beat = 4
+lifetime = 40
+bullet_prefab = ExtResource("3_e4xwo")
+color = 2
+targeted = true
+quantity = 45
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="flower2" parent="." instance=ExtResource("1_1p8sj")]
+position = Vector2(686, 160)
+lifetime = 7
+
+[node name="BulletVolley" type="Node2D" parent="flower2"]
+script = ExtResource("2_jdpr3")
+lifetime = 40
+bullet_prefab = ExtResource("3_e4xwo")
+color = 1
+targeted = true
+quantity = 45
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="flower2"]
+script = ExtResource("2_jdpr3")
+beat = 4
+lifetime = 40
+bullet_prefab = ExtResource("3_e4xwo")
+color = 2
+targeted = true
+quantity = 45
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="flower1" parent="." instance=ExtResource("1_1p8sj")]
+position = Vector2(486, 160)
+lifetime = 7
+
+[node name="BulletVolley" type="Node2D" parent="flower1"]
+script = ExtResource("2_jdpr3")
+lifetime = 40
+bullet_prefab = ExtResource("3_e4xwo")
+color = 1
+targeted = true
+quantity = 45
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="flower1"]
+script = ExtResource("2_jdpr3")
+beat = 4
+lifetime = 40
+bullet_prefab = ExtResource("3_e4xwo")
+color = 2
+targeted = true
+quantity = 45
+offset_degrees = 5.0
+spacing_degrees = 8.0
+speed = 4.0
+curved = 5.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletSpawner2" parent="." instance=ExtResource("1_1p8sj")]
+position = Vector2(221, 160)
+lifetime = 6
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner2"]
+script = ExtResource("2_jdpr3")
+bullet_prefab = ExtResource("4_oo1ri")
+targeted = true
+quantity = 3
+spacing_degrees = 10.0
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletSpawner3" parent="." instance=ExtResource("1_1p8sj")]
+position = Vector2(974, 160)
+lifetime = 6
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner3"]
+script = ExtResource("2_jdpr3")
+bullet_prefab = ExtResource("4_oo1ri")
+targeted = true
+quantity = 3
+spacing_degrees = 10.0
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"

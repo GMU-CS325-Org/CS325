@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://c05jtbwm3luk5"]
+
+[ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="1_1yn7j"]
+[ext_resource type="Script" uid="uid://d2gkpbmicg5b" path="res://entities/bullet_spawner/bullet_volley.gd" id="2_mrlrr"]
+[ext_resource type="PackedScene" uid="uid://fxp01knde2fu" path="res://entities/bullets/enemy/wiggly_enemy_bullet.tscn" id="3_7fd4h"]
+
+[node name="dna_type1" type="Node2D"]
+
+[node name="BulletSpawner" parent="." instance=ExtResource("1_1yn7j")]
+start_beat = 2
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner"]
+script = ExtResource("2_mrlrr")
+lifetime = 40
+bullet_prefab = ExtResource("3_7fd4h")
+color = 1
+targeted = true
+speed = 5.0
+wiggle_freq = 4.0
+wiggle_dist = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley3" type="Node2D" parent="BulletSpawner"]
+script = ExtResource("2_mrlrr")
+lifetime = 40
+bullet_prefab = ExtResource("3_7fd4h")
+color = 2
+targeted = true
+speed = 5.0
+wiggle_freq = 4.0
+wiggle_dist = -4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletSpawner2" parent="." instance=ExtResource("1_1yn7j")]
+position = Vector2(1152, 0)
+start_beat = 2
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner2"]
+script = ExtResource("2_mrlrr")
+lifetime = 40
+bullet_prefab = ExtResource("3_7fd4h")
+color = 1
+targeted = true
+speed = 5.0
+wiggle_freq = 4.0
+wiggle_dist = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley3" type="Node2D" parent="BulletSpawner2"]
+script = ExtResource("2_mrlrr")
+lifetime = 40
+bullet_prefab = ExtResource("3_7fd4h")
+color = 2
+targeted = true
+speed = 5.0
+wiggle_freq = 4.0
+wiggle_dist = -4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"

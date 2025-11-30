@@ -1,0 +1,2217 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl5m0qes2s33s"]
+
+[ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="1_5gr3f"]
+[ext_resource type="Script" uid="uid://d2gkpbmicg5b" path="res://entities/bullet_spawner/bullet_volley.gd" id="2_78wdk"]
+[ext_resource type="PackedScene" uid="uid://bpunhsi3rwh0u" path="res://entities/bullets/enemy/basic_enemy_bullet.tscn" id="3_p2ss5"]
+
+[node name="Ensnared" type="Node2D"]
+metadata/_edit_vertical_guides_ = [576.0]
+metadata/_edit_horizontal_guides_ = [324.0]
+
+[node name="BulletSpawner" parent="." instance=ExtResource("1_5gr3f")]
+rotation = -0.785398
+lifetime = 17
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner"]
+script = ExtResource("2_78wdk")
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+color = 2
+quantity = 15
+spacing_degrees = 15.0
+speed = 3.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner"]
+script = ExtResource("2_78wdk")
+beat = 9
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+color = 2
+quantity = 15
+spacing_degrees = 15.0
+speed = 3.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletSpawner4" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 0)
+rotation = 0.785398
+lifetime = 17
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner4"]
+script = ExtResource("2_78wdk")
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+color = 2
+quantity = 15
+spacing_degrees = 15.0
+speed = 3.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner4"]
+script = ExtResource("2_78wdk")
+beat = 9
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+color = 2
+quantity = 15
+spacing_degrees = 15.0
+speed = 3.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletSpawner2" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 648)
+rotation = 2.35619
+lifetime = 17
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner2"]
+script = ExtResource("2_78wdk")
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+color = 1
+quantity = 15
+spacing_degrees = 15.0
+speed = 3.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner2"]
+script = ExtResource("2_78wdk")
+beat = 9
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+color = 1
+quantity = 15
+spacing_degrees = 15.0
+speed = 3.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletSpawner3" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 648)
+rotation = -2.35619
+lifetime = 17
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner3"]
+script = ExtResource("2_78wdk")
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+color = 1
+quantity = 15
+spacing_degrees = 15.0
+speed = 3.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner3"]
+script = ExtResource("2_78wdk")
+beat = 9
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+color = 1
+quantity = 15
+spacing_degrees = 15.0
+speed = 3.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(6.10352e-05, -1.35525e-20)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall2" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 44)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall2"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall3" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 88)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall3"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall4" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 132)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall4"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall5" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 176)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall5"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall6" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 220)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall6"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall7" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 264)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall7"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall8" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 308)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall8"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall9" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 352)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall9"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall10" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 396)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall10"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall11" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 440)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall11"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall12" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 484)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall12"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall13" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1.81899e-12, 528)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall13"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall14" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 572)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall14"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall15" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(-3.25261e-19, 616)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall15"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall16" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(6.10352e-05, 22)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall16"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall17" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 66)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall17"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall18" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 110)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall18"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall19" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 154)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall19"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall20" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 198)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall20"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall21" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 242)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall21"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall22" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 286)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall22"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall23" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 330)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall23"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall24" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 374)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall24"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall25" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 418)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall25"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall26" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 462)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall26"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall27" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(3.25261e-19, 506)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall27"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall28" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1.81899e-12, 550)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall28"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall29" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(6.50521e-19, 594)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall29"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Left Wall30" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(-2.58494e-26, 638)
+rotation = -1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Left Wall30"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 0)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall2" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 44)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall2"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall3" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 88)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall3"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall4" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 132)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall4"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall5" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 176)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall5"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall6" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 220)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall6"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall7" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 264)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall7"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall8" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 308)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall8"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall9" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 352)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall9"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall10" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 396)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall10"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall11" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 440)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall11"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall12" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 484)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall12"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall13" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 528)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall13"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall14" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 572)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall14"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall15" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 616)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall15"]
+script = ExtResource("2_78wdk")
+beat = 11
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall16" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 22)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall16"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall17" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 66)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall17"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall18" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 110)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall18"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall19" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 154)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall19"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall20" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 198)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall20"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall21" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 242)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall21"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall22" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 286)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall22"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall23" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 330)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall23"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall24" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 374)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall24"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall25" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 418)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall25"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall26" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 462)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall26"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall27" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 506)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall27"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall28" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 550)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall28"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall29" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 594)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall29"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Right Wall30" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1152, 638)
+rotation = 1.5708
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Right Wall30"]
+script = ExtResource("2_78wdk")
+beat = 22
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(6.10352e-05, -1.35525e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall2" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(44.0001, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall2"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall3" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(88, -8.07794e-28)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall3"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall4" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(132, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall4"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall5" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(176, -4.81482e-35)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall5"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall6" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(220, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall6"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall7" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(264, 1.35525e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall7"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall8" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(308, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall8"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall9" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(352, -4.81482e-35)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall9"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall10" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(396, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall10"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall11" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(440, 1.35525e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall11"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall12" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(484, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall12"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall13" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(528, 1.35525e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall13"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall14" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(572, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall14"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall15" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(616, 2.71051e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall15"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall16" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(660, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall16"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall17" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(704, -4.81482e-35)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall17"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall18" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(748, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall18"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall19" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(792, 1.35525e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall19"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall20" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(836, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall20"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall21" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(880, 1.35525e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall21"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall22" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(924, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall22"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall23" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(968, 2.71051e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall23"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall24" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1012, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall24"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall25" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1056, 1.35525e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall25"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall26" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1100, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall26"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall27" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1144, 2.71051e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall27"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall28" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(22, -8.07794e-28)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall28"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall29" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(66, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall29"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall30" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(110, 1.35525e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall30"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall31" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(154, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall31"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall32" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(198, 1.35525e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall32"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall33" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(242, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall33"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall34" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(286, 2.71051e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall34"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall35" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(330, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall35"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall36" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(374, 1.35525e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall36"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall37" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(418, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall37"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall38" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(462, 2.71051e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall38"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall39" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(506, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall39"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall40" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(550, 2.71051e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall40"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall41" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(594, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall41"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall42" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(638, 4.06576e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall42"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall43" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(682, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall43"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall44" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(726, 1.35525e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall44"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall45" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(770, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall45"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall46" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(814, 2.71051e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall46"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall47" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(858, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall47"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall48" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(902, 2.71051e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall48"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall49" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(946, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall49"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall50" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(990, 4.06576e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall50"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall51" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1034, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall51"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall52" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1078, 2.71051e-20)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall52"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Top Wall53" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1122, 3.8147e-06)
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Top Wall53"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(0, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall2" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(44, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall2"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall3" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(87.9999, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall3"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall4" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(132, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall4"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall5" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(176, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall5"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall6" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(220, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall6"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall7" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(264, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall7"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall8" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(308, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall8"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall9" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(352, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall9"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall10" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(396, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall10"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall11" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(440, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall11"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall12" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(484, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall12"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall13" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(528, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall13"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall14" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(572, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall14"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall15" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(616, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall15"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall16" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(660, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall16"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall17" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(704, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall17"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall18" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(748, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall18"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall19" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(792, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall19"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall20" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(836, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall20"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall21" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(880, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall21"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall22" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(924, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall22"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall23" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(968, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall23"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall24" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1012, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall24"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall25" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1056, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall25"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall26" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1100, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall26"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall27" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1144, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall27"]
+script = ExtResource("2_78wdk")
+beat = 5
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall28" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(21.9999, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall28"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall29" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(65.9999, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall29"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall30" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(110, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall30"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall31" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(154, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall31"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall32" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(198, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall32"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall33" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(242, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall33"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall34" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(286, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall34"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall35" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(330, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall35"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall36" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(374, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall36"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall37" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(418, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall37"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall38" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(462, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall38"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall39" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(506, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall39"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall40" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(550, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall40"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall41" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(594, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall41"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall42" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(638, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall42"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall43" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(682, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall43"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall44" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(726, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall44"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall45" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(770, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall45"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall46" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(814, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall46"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall47" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(858, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall47"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall48" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(902, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall48"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall49" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(946, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall49"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall50" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(990, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall50"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall51" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1034, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall51"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall52" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1078, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall52"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="Bottom Wall53" parent="." instance=ExtResource("1_5gr3f")]
+position = Vector2(1122, 648)
+rotation = 3.14159
+lifetime = 22
+
+[node name="BulletVolley" type="Node2D" parent="Bottom Wall53"]
+script = ExtResource("2_78wdk")
+beat = 16
+lifetime = 45
+bullet_prefab = ExtResource("3_p2ss5")
+speed = 3.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"

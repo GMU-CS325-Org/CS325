@@ -2,16 +2,22 @@ class_name PlayerWeapons extends Node2D
 
 @onready var guns : Array[Gun]
 
-static var selected_gun : Gun
+var selected_gun : Gun
 
+@export var weapon : int
 
 func _ready() -> void:
 	for node : Node in get_children():
 		if node is Gun:
 			guns.append(node as Gun)
 	
-	selected_gun = guns[0]
-	
+	selected_gun = guns[weapon]
+
+func hide_unselected():
+	if (weapon == 0):
+		$Triangle.hide()
+	else:
+		$Picktol.hide()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("primary_fire"):

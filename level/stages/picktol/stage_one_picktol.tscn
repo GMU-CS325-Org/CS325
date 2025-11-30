@@ -1,0 +1,74 @@
+[gd_scene load_steps=16 format=3 uid="uid://dwi6w0njbm1t3"]
+
+[ext_resource type="Script" uid="uid://dhtukj50i3x2w" path="res://level/stages/level.gd" id="1_blvpw"]
+[ext_resource type="Script" uid="uid://bumudl2byvexc" path="res://bullet_container.gd" id="2_h4i58"]
+[ext_resource type="PackedScene" uid="uid://qyt6aarjhobb" path="res://entities/enemy/enemy.tscn" id="3_5tngm"]
+[ext_resource type="Texture2D" uid="uid://djvfumqdh38fe" path="res://sprites/background.png" id="4_w5rou"]
+[ext_resource type="PackedScene" uid="uid://kiekkvdi5uqo" path="res://entities/player/player.tscn" id="5_djkps"]
+[ext_resource type="Script" uid="uid://buq1uqxcd57nv" path="res://bullet_pattern_switch.gd" id="6_14kxm"]
+[ext_resource type="PackedScene" uid="uid://dlrvn0gjh2u43" path="res://level/attacks/stage 1/basic_pattern.tscn" id="7_ctsaw"]
+[ext_resource type="PackedScene" uid="uid://52dw57a6cmgt" path="res://level/attacks/stage 1/dna_type2.tscn" id="8_7yin3"]
+[ext_resource type="PackedScene" uid="uid://eumbcc2tr4ji" path="res://level/attacks/stage 1/ghosts_wanna_dance.tscn" id="9_khdjq"]
+[ext_resource type="PackedScene" uid="uid://bu8tgmln787yt" path="res://level/attacks/stage 1/curving_bloom.tscn" id="10_bokwx"]
+[ext_resource type="PackedScene" uid="uid://de1i3s1me6jch" path="res://level/attacks/stage 1/lockstep.tscn" id="11_eudim"]
+[ext_resource type="PackedScene" uid="uid://b5ivrx0fdkfoa" path="res://level/attacks/stage 1/dodge_rain_bozo.tscn" id="12_ard33"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2nij2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nij2"]
+size = Vector2(1165, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cbxl"]
+size = Vector2(20, 658)
+
+[node name="stage_one" type="Node2D"]
+script = ExtResource("1_blvpw")
+
+[node name="BulletContainer" type="Node2D" parent="." groups=["bullet_container"]]
+script = ExtResource("2_h4i58")
+
+[node name="enemy" parent="." instance=ExtResource("3_5tngm")]
+position = Vector2(586, 150)
+scale = Vector2(0.56, 0.56)
+
+[node name="HealthComponent" parent="enemy" index="0"]
+max_health = 250
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -6
+position = Vector2(575, 323)
+scale = Vector2(0.601871, 0.601871)
+texture = ExtResource("4_w5rou")
+
+[node name="Player" parent="." instance=ExtResource("5_djkps")]
+position = Vector2(581, 569)
+
+[node name="walls" type="StaticBody2D" parent="."]
+position = Vector2(2, 0)
+collision_layer = 4
+collision_mask = 4
+collision_priority = 3.0
+physics_material_override = SubResource("PhysicsMaterial_2nij2")
+
+[node name="top" type="CollisionShape2D" parent="walls"]
+position = Vector2(573, -10)
+shape = SubResource("RectangleShape2D_2nij2")
+
+[node name="bottom" type="CollisionShape2D" parent="walls"]
+position = Vector2(573, 658)
+shape = SubResource("RectangleShape2D_2nij2")
+
+[node name="left" type="CollisionShape2D" parent="walls"]
+position = Vector2(-12, 319)
+shape = SubResource("RectangleShape2D_7cbxl")
+
+[node name="right" type="CollisionShape2D" parent="walls"]
+position = Vector2(1161, 319)
+shape = SubResource("RectangleShape2D_7cbxl")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("6_14kxm")
+patterns = Array[PackedScene]([ExtResource("7_ctsaw"), ExtResource("8_7yin3"), ExtResource("9_khdjq"), ExtResource("10_bokwx"), ExtResource("11_eudim"), ExtResource("12_ard33")])
+thresholds = Array[int]([210, 170, 130, 90, 50, 0])
+
+[editable path="enemy"]

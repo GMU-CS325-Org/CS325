@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://cji6atyhyl2x8"]
+
+[ext_resource type="PackedScene" uid="uid://b42uw8uhddflh" path="res://entities/enemy/pattern_enemy.tscn" id="1_csx7f"]
+[ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="2_1m2ce"]
+[ext_resource type="Script" uid="uid://d2gkpbmicg5b" path="res://entities/bullet_spawner/bullet_volley.gd" id="3_lhtrl"]
+[ext_resource type="PackedScene" uid="uid://bpunhsi3rwh0u" path="res://entities/bullets/enemy/basic_enemy_bullet.tscn" id="4_kyxjk"]
+
+[node name="Rat Attack" type="Node2D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_csx7f")]
+position = Vector2(217, 117)
+hp = 15
+
+[node name="BulletSpawner" parent="enemy" instance=ExtResource("2_1m2ce")]
+lifetime = 3
+
+[node name="BulletVolley" type="Node2D" parent="enemy/BulletSpawner"]
+script = ExtResource("3_lhtrl")
+beat = 3
+bullet_prefab = ExtResource("4_kyxjk")
+color = 1
+targeted = true
+quantity = 6
+spacing_degrees = 20.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="enemy2" parent="." instance=ExtResource("1_csx7f")]
+position = Vector2(900, 117)
+hp = 15
+
+[node name="BulletSpawner" parent="enemy2" instance=ExtResource("2_1m2ce")]
+lifetime = 3
+
+[node name="BulletVolley" type="Node2D" parent="enemy2/BulletSpawner"]
+script = ExtResource("3_lhtrl")
+beat = 3
+bullet_prefab = ExtResource("4_kyxjk")
+color = 2
+targeted = true
+quantity = 6
+spacing_degrees = 20.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletSpawner2" parent="." instance=ExtResource("2_1m2ce")]
+position = Vector2(580, 140)
+lifetime = 7
+
+[node name="BulletVolley" type="Node2D" parent="BulletSpawner2"]
+script = ExtResource("3_lhtrl")
+beat = 3
+bullet_prefab = ExtResource("4_kyxjk")
+color = 2
+targeted = true
+quantity = 8
+spacing_degrees = 20.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="BulletSpawner2"]
+script = ExtResource("3_lhtrl")
+beat = 7
+bullet_prefab = ExtResource("4_kyxjk")
+color = 1
+targeted = true
+quantity = 8
+spacing_degrees = 20.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"

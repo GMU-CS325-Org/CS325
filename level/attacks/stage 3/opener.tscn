@@ -1,0 +1,312 @@
+[gd_scene load_steps=4 format=3 uid="uid://cak0f4m5lphhj"]
+
+[ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="1_7jejl"]
+[ext_resource type="Script" uid="uid://d2gkpbmicg5b" path="res://entities/bullet_spawner/bullet_volley.gd" id="2_vvw3p"]
+[ext_resource type="PackedScene" uid="uid://bpunhsi3rwh0u" path="res://entities/bullets/enemy/basic_enemy_bullet.tscn" id="3_e8eg3"]
+
+[node name="needle_shot" type="Node2D"]
+
+[node name="intro" parent="." instance=ExtResource("1_7jejl")]
+position = Vector2(586, 150)
+lifetime = 23
+looping = false
+
+[node name="BulletVolley" type="Node2D" parent="intro"]
+script = ExtResource("2_vvw3p")
+lifetime = 50
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 50
+spacing_degrees = 8.0
+speed = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="intro"]
+script = ExtResource("2_vvw3p")
+beat = 4
+lifetime = 50
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 50
+spacing_degrees = 8.0
+speed = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley3" type="Node2D" parent="intro"]
+script = ExtResource("2_vvw3p")
+beat = 8
+lifetime = 50
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 50
+spacing_degrees = 8.0
+speed = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley4" type="Node2D" parent="intro"]
+script = ExtResource("2_vvw3p")
+beat = 12
+lifetime = 50
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 50
+spacing_degrees = 8.0
+speed = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley5" type="Node2D" parent="intro"]
+script = ExtResource("2_vvw3p")
+beat = 16
+lifetime = 50
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 50
+spacing_degrees = 8.0
+speed = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley6" type="Node2D" parent="intro"]
+script = ExtResource("2_vvw3p")
+beat = 20
+lifetime = 50
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 50
+spacing_degrees = 8.0
+speed = 2.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="needler" parent="." instance=ExtResource("1_7jejl")]
+position = Vector2(586, 150)
+lifetime = 7
+initial_offset = 32
+
+[node name="BulletVolley" type="Node2D" parent="needler"]
+script = ExtResource("2_vvw3p")
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 30
+offset_degrees = 4.0
+spacing_degrees = 8.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="needler"]
+script = ExtResource("2_vvw3p")
+beat = 1
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 30
+offset_degrees = 4.0
+spacing_degrees = 8.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley3" type="Node2D" parent="needler"]
+script = ExtResource("2_vvw3p")
+beat = 2
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 30
+offset_degrees = 4.0
+spacing_degrees = 8.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley4" type="Node2D" parent="needler"]
+script = ExtResource("2_vvw3p")
+beat = 3
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 30
+offset_degrees = 4.0
+spacing_degrees = 8.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley5" type="Node2D" parent="needler"]
+script = ExtResource("2_vvw3p")
+beat = 4
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 30
+offset_degrees = 4.0
+spacing_degrees = 8.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley6" type="Node2D" parent="needler"]
+script = ExtResource("2_vvw3p")
+beat = 5
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 30
+offset_degrees = 4.0
+spacing_degrees = 8.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley7" type="Node2D" parent="needler"]
+script = ExtResource("2_vvw3p")
+beat = 6
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 30
+offset_degrees = 4.0
+spacing_degrees = 8.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley8" type="Node2D" parent="needler"]
+script = ExtResource("2_vvw3p")
+beat = 7
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+quantity = 30
+offset_degrees = 4.0
+spacing_degrees = 8.0
+speed = 4.0
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="intro stinger" parent="." instance=ExtResource("1_7jejl")]
+lifetime = 11
+start_beat = 2
+looping = false
+initial_offset = 50
+
+[node name="BulletVolley" type="Node2D" parent="intro stinger"]
+script = ExtResource("2_vvw3p")
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+color = 1
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley2" type="Node2D" parent="intro stinger"]
+script = ExtResource("2_vvw3p")
+beat = 1
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+color = 1
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley3" type="Node2D" parent="intro stinger"]
+script = ExtResource("2_vvw3p")
+beat = 2
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+color = 1
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley4" type="Node2D" parent="intro stinger"]
+script = ExtResource("2_vvw3p")
+beat = 3
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+color = 1
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="intro stinger2" parent="." instance=ExtResource("1_7jejl")]
+position = Vector2(1152, 0)
+lifetime = 11
+start_beat = 2
+looping = false
+initial_offset = 50
+
+[node name="BulletVolley2" type="Node2D" parent="intro stinger2"]
+script = ExtResource("2_vvw3p")
+beat = 4
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+color = 2
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley3" type="Node2D" parent="intro stinger2"]
+script = ExtResource("2_vvw3p")
+beat = 5
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+color = 2
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley4" type="Node2D" parent="intro stinger2"]
+script = ExtResource("2_vvw3p")
+beat = 6
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+color = 2
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley5" type="Node2D" parent="intro stinger2"]
+script = ExtResource("2_vvw3p")
+beat = 7
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+color = 2
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="intro stinger3" parent="." instance=ExtResource("1_7jejl")]
+position = Vector2(576, 0)
+lifetime = 11
+start_beat = 2
+looping = false
+initial_offset = 50
+
+[node name="BulletVolley3" type="Node2D" parent="intro stinger3"]
+script = ExtResource("2_vvw3p")
+beat = 8
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley4" type="Node2D" parent="intro stinger3"]
+script = ExtResource("2_vvw3p")
+beat = 9
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley5" type="Node2D" parent="intro stinger3"]
+script = ExtResource("2_vvw3p")
+beat = 10
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="BulletVolley6" type="Node2D" parent="intro stinger3"]
+script = ExtResource("2_vvw3p")
+beat = 11
+lifetime = 60
+bullet_prefab = ExtResource("3_e8eg3")
+targeted = true
+speed = 8.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
