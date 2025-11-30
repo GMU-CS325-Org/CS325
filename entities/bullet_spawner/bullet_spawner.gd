@@ -7,9 +7,11 @@ var bullet_volley_groups : Dictionary[int,BulletVolleyGroup]
 @export var lifetime : int = 0 #number of beats until spawner is removed
 @export var start_beat : BeatSync.Note
 @export var looping : bool = true
+@export var initial_offset = 0
 
 func _ready() -> void:
-	#$Sprite2D.hide()
+	$Sprite2D.hide()
+	age -= initial_offset
 	for node : Node2D in get_children():
 		if not node is BulletVolley:
 			continue
@@ -23,6 +25,10 @@ func _ready() -> void:
 	BeatSync.quarter_beat.connect(_quarter_note)
 	BeatSync.eighth_beat.connect(_eighth_note)
 	BeatSync.sixteenth_beat.connect(_sixteenth_note)
+
+func _process(delta: float) -> void:
+	$spell.rotate(0.5 * delta)
+	pass
 
 func _quarter_note() -> void:
 	if start_beat == BeatSync.Note.QUARTER:
@@ -46,3 +52,5 @@ func _beat():
 	age += 1
 	if (age > lifetime && looping):
 		age = 0
+	elif (age > lifetime && !looping):
+		$spell.hide()

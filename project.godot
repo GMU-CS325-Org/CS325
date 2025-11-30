@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 BeatSync="*res://level/music/beat_sync/beat_sync.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [file_customization]
 
 folder_colors={

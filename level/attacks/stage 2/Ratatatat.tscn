@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8d6v0udh63ng"]
+
+[ext_resource type="PackedScene" uid="uid://b42uw8uhddflh" path="res://entities/enemy/pattern_enemy.tscn" id="1_j1jh2"]
+[ext_resource type="PackedScene" uid="uid://cind6ta211h8t" path="res://entities/bullet_spawner/bullet_spawner.tscn" id="2_j4hjr"]
+[ext_resource type="Script" uid="uid://d2gkpbmicg5b" path="res://entities/bullet_spawner/bullet_volley.gd" id="3_h6rss"]
+[ext_resource type="PackedScene" uid="uid://bpunhsi3rwh0u" path="res://entities/bullets/enemy/basic_enemy_bullet.tscn" id="4_e4plu"]
+
+[node name="Ratatatat" type="Node2D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_j1jh2")]
+position = Vector2(81, 70)
+hp = 15
+
+[node name="BulletSpawner" parent="enemy" instance=ExtResource("2_j4hjr")]
+start_beat = 2
+
+[node name="BulletVolley" type="Node2D" parent="enemy/BulletSpawner"]
+script = ExtResource("3_h6rss")
+bullet_prefab = ExtResource("4_e4plu")
+color = 1
+targeted = true
+speed = 5.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="enemy2" parent="." instance=ExtResource("1_j1jh2")]
+position = Vector2(1076, 67)
+
+[node name="BulletSpawner" parent="enemy2" instance=ExtResource("2_j4hjr")]
+
+[node name="BulletVolley" type="Node2D" parent="enemy2/BulletSpawner"]
+script = ExtResource("3_h6rss")
+bullet_prefab = ExtResource("4_e4plu")
+color = 1
+targeted = true
+speed = 5.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="enemy3" parent="." instance=ExtResource("1_j1jh2")]
+position = Vector2(51, 580)
+
+[node name="BulletSpawner" parent="enemy3" instance=ExtResource("2_j4hjr")]
+
+[node name="BulletVolley" type="Node2D" parent="enemy3/BulletSpawner"]
+script = ExtResource("3_h6rss")
+bullet_prefab = ExtResource("4_e4plu")
+color = 2
+targeted = true
+speed = 5.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"
+
+[node name="enemy4" parent="." instance=ExtResource("1_j1jh2")]
+position = Vector2(1095, 572)
+
+[node name="BulletSpawner" parent="enemy4" instance=ExtResource("2_j4hjr")]
+
+[node name="BulletVolley" type="Node2D" parent="enemy4/BulletSpawner"]
+script = ExtResource("3_h6rss")
+bullet_prefab = ExtResource("4_e4plu")
+color = 2
+targeted = true
+speed = 5.5
+metadata/_custom_type_script = "uid://d2gkpbmicg5b"

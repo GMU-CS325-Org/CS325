@@ -1,22 +1,25 @@
-[gd_scene load_steps=18 format=3 uid="uid://ewulbntlwwa7"]
+[gd_scene load_steps=16 format=3 uid="uid://ewulbntlwwa7"]
 
 [ext_resource type="Script" uid="uid://34n6bcwd02wq" path="res://test_scene.gd" id="1_uhqqe"]
-[ext_resource type="Script" path="res://bullet_container.gd" id="2_7cbxl"]
+[ext_resource type="Script" uid="uid://bumudl2byvexc" path="res://bullet_container.gd" id="2_7cbxl"]
 [ext_resource type="PackedScene" uid="uid://kiekkvdi5uqo" path="res://entities/player/player.tscn" id="2_ia1lp"]
 [ext_resource type="Texture2D" uid="uid://djvfumqdh38fe" path="res://sprites/background.png" id="6_7cbxl"]
-[ext_resource type="PackedScene" uid="uid://celrkcvpd2xiv" path="res://level/attacks/encircled.tscn" id="6_8pr8v"]
+[ext_resource type="Script" uid="uid://buq1uqxcd57nv" path="res://bullet_pattern_switch.gd" id="6_8pr8v"]
 [ext_resource type="PackedScene" uid="uid://qyt6aarjhobb" path="res://entities/enemy/enemy.tscn" id="7_8pr8v"]
-[ext_resource type="Script" uid="uid://buq1uqxcd57nv" path="res://bullet_pattern_switch.gd" id="7_buypi"]
-[ext_resource type="PackedScene" uid="uid://dlrvn0gjh2u43" path="res://level/attacks/basic_pattern.tscn" id="8_k6its"]
-[ext_resource type="PackedScene" uid="uid://d1c83nndulhie" path="res://level/attacks/boxed_in.tscn" id="9_2dw41"]
-[ext_resource type="PackedScene" uid="uid://bu8tgmln787yt" path="res://level/attacks/curving_bloom.tscn" id="10_ykxp3"]
-[ext_resource type="PackedScene" uid="uid://c05jtbwm3luk5" path="res://level/attacks/dna_type1.tscn" id="11_g6y4b"]
-[ext_resource type="PackedScene" uid="uid://52dw57a6cmgt" path="res://level/attacks/dna_type2.tscn" id="12_pvxhv"]
-[ext_resource type="PackedScene" uid="uid://b5ivrx0fdkfoa" path="res://level/attacks/dodge_rain_bozo.tscn" id="13_6h1ut"]
-[ext_resource type="PackedScene" uid="uid://eumbcc2tr4ji" path="res://level/attacks/ghosts_wanna_dance.tscn" id="14_6m80x"]
-[ext_resource type="PackedScene" uid="uid://ljehq8j0s5fd" path="res://level/attacks/leaves_in_the_wind.tscn" id="15_cqn77"]
-[ext_resource type="PackedScene" uid="uid://de1i3s1me6jch" path="res://level/attacks/lockstep.tscn" id="16_22oil"]
-[ext_resource type="PackedScene" uid="uid://bdidelm8nfmk8" path="res://level/attacks/wall_of_pain.tscn" id="17_p7tmn"]
+[ext_resource type="PackedScene" uid="uid://dlrvn0gjh2u43" path="res://level/attacks/stage 1/basic_pattern.tscn" id="7_buypi"]
+[ext_resource type="PackedScene" uid="uid://eumbcc2tr4ji" path="res://level/attacks/stage 1/ghosts_wanna_dance.tscn" id="8_njel3"]
+[ext_resource type="PackedScene" uid="uid://52dw57a6cmgt" path="res://level/attacks/stage 1/dna_type2.tscn" id="8_oo8pe"]
+[ext_resource type="PackedScene" uid="uid://bu8tgmln787yt" path="res://level/attacks/stage 1/curving_bloom.tscn" id="8_vr1i5"]
+[ext_resource type="PackedScene" uid="uid://b5ivrx0fdkfoa" path="res://level/attacks/stage 1/dodge_rain_bozo.tscn" id="11_oo8pe"]
+[ext_resource type="PackedScene" uid="uid://de1i3s1me6jch" path="res://level/attacks/stage 1/lockstep.tscn" id="12_4gito"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2nij2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nij2"]
+size = Vector2(1165, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cbxl"]
+size = Vector2(20, 658)
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_uhqqe")
@@ -25,6 +28,7 @@ script = ExtResource("1_uhqqe")
 script = ExtResource("2_7cbxl")
 
 [node name="HSlider" type="HSlider" parent="."]
+visible = false
 offset_left = 375.0
 offset_top = 499.0
 offset_right = 702.0
@@ -36,6 +40,9 @@ max_value = 100000.0
 position = Vector2(586, 150)
 scale = Vector2(0.56, 0.56)
 
+[node name="HealthComponent" parent="enemy" index="0"]
+max_health = 180
+
 [node name="background" type="Sprite2D" parent="."]
 z_index = -6
 position = Vector2(575, 323)
@@ -45,8 +52,34 @@ texture = ExtResource("6_7cbxl")
 [node name="Player" parent="." instance=ExtResource("2_ia1lp")]
 position = Vector2(581, 487)
 
+[node name="walls" type="StaticBody2D" parent="."]
+position = Vector2(2, 0)
+collision_layer = 4
+collision_mask = 4
+collision_priority = 3.0
+physics_material_override = SubResource("PhysicsMaterial_2nij2")
+
+[node name="top" type="CollisionShape2D" parent="walls"]
+position = Vector2(573, -10)
+shape = SubResource("RectangleShape2D_2nij2")
+
+[node name="bottom" type="CollisionShape2D" parent="walls"]
+position = Vector2(573, 658)
+shape = SubResource("RectangleShape2D_2nij2")
+
+[node name="left" type="CollisionShape2D" parent="walls"]
+position = Vector2(-12, 319)
+shape = SubResource("RectangleShape2D_7cbxl")
+
+[node name="right" type="CollisionShape2D" parent="walls"]
+position = Vector2(1161, 319)
+shape = SubResource("RectangleShape2D_7cbxl")
+
 [node name="Node2D" type="Node2D" parent="."]
-script = ExtResource("7_buypi")
-patterns = Array[PackedScene]([ExtResource("8_k6its"), ExtResource("9_2dw41"), ExtResource("10_ykxp3"), ExtResource("11_g6y4b"), ExtResource("12_pvxhv"), ExtResource("13_6h1ut"), ExtResource("6_8pr8v"), ExtResource("14_6m80x"), ExtResource("15_cqn77"), ExtResource("16_22oil"), ExtResource("17_p7tmn")])
+script = ExtResource("6_8pr8v")
+patterns = Array[PackedScene]([ExtResource("7_buypi"), ExtResource("8_oo8pe"), ExtResource("8_njel3"), ExtResource("8_vr1i5"), ExtResource("12_4gito"), ExtResource("11_oo8pe")])
+thresholds = Array[int]([160, 130, 100, 70, 40, 0])
 
 [connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
+
+[editable path="enemy"]

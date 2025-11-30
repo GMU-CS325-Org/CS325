@@ -1,0 +1,76 @@
+[gd_scene load_steps=16 format=3 uid="uid://do4k3ud5gbrt1"]
+
+[ext_resource type="Script" uid="uid://dhtukj50i3x2w" path="res://level/stages/level.gd" id="1_e62xy"]
+[ext_resource type="Script" uid="uid://bumudl2byvexc" path="res://bullet_container.gd" id="2_br5k0"]
+[ext_resource type="PackedScene" uid="uid://qyt6aarjhobb" path="res://entities/enemy/enemy.tscn" id="3_afy74"]
+[ext_resource type="Texture2D" uid="uid://djvfumqdh38fe" path="res://sprites/background.png" id="4_f7mc8"]
+[ext_resource type="PackedScene" uid="uid://kiekkvdi5uqo" path="res://entities/player/player.tscn" id="5_q702y"]
+[ext_resource type="Script" uid="uid://buq1uqxcd57nv" path="res://bullet_pattern_switch.gd" id="6_1uqcn"]
+[ext_resource type="PackedScene" uid="uid://d1c83nndulhie" path="res://level/attacks/stage 2/boxed_in.tscn" id="7_e62xy"]
+[ext_resource type="PackedScene" uid="uid://celrkcvpd2xiv" path="res://level/attacks/stage 2/encircled.tscn" id="8_br5k0"]
+[ext_resource type="PackedScene" uid="uid://cji6atyhyl2x8" path="res://level/attacks/stage 2/rat_attack.tscn" id="9_afy74"]
+[ext_resource type="PackedScene" uid="uid://ljehq8j0s5fd" path="res://level/attacks/stage 2/leaves_in_the_wind.tscn" id="10_f7mc8"]
+[ext_resource type="PackedScene" uid="uid://dydiij8ujl4nc" path="res://level/attacks/stage 2/rat_wall.tscn" id="11_q702y"]
+[ext_resource type="PackedScene" uid="uid://b8d6v0udh63ng" path="res://level/attacks/stage 2/Ratatatat.tscn" id="12_1uqcn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2nij2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nij2"]
+size = Vector2(1165, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cbxl"]
+size = Vector2(20, 658)
+
+[node name="stage_two" type="Node2D"]
+script = ExtResource("1_e62xy")
+stage = "res://level/level_data/stage_two.tres"
+
+[node name="BulletContainer" type="Node2D" parent="." groups=["bullet_container"]]
+script = ExtResource("2_br5k0")
+
+[node name="enemy" parent="." instance=ExtResource("3_afy74")]
+position = Vector2(586, 150)
+scale = Vector2(0.56, 0.56)
+sprites = 1
+
+[node name="HealthComponent" parent="enemy" index="0"]
+max_health = 230
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -6
+position = Vector2(575, 323)
+scale = Vector2(0.601871, 0.601871)
+texture = ExtResource("4_f7mc8")
+
+[node name="Player" parent="." instance=ExtResource("5_q702y")]
+position = Vector2(581, 569)
+
+[node name="walls" type="StaticBody2D" parent="."]
+position = Vector2(2, 0)
+collision_layer = 4
+collision_mask = 4
+collision_priority = 3.0
+physics_material_override = SubResource("PhysicsMaterial_2nij2")
+
+[node name="top" type="CollisionShape2D" parent="walls"]
+position = Vector2(573, -10)
+shape = SubResource("RectangleShape2D_2nij2")
+
+[node name="bottom" type="CollisionShape2D" parent="walls"]
+position = Vector2(573, 658)
+shape = SubResource("RectangleShape2D_2nij2")
+
+[node name="left" type="CollisionShape2D" parent="walls"]
+position = Vector2(-12, 319)
+shape = SubResource("RectangleShape2D_7cbxl")
+
+[node name="right" type="CollisionShape2D" parent="walls"]
+position = Vector2(1161, 319)
+shape = SubResource("RectangleShape2D_7cbxl")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("6_1uqcn")
+patterns = Array[PackedScene]([ExtResource("8_br5k0"), ExtResource("9_afy74"), ExtResource("7_e62xy"), ExtResource("10_f7mc8"), ExtResource("11_q702y"), ExtResource("12_1uqcn")])
+thresholds = Array[int]([190, 150, 110, 70, 50, 0])
+
+[editable path="enemy"]

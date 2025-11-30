@@ -14,6 +14,9 @@ func primary_fire() -> void:
 			print("early")
 		BeatSync.Timing.GOOD:
 			raycast_shoot(global_position.direction_to(get_global_mouse_position()),$PistolDamageComponent)
+			$picktol_sprite.play("strum")
+			$picktol_sprite.set_frame(0)
+			$Strum.play()
 		BeatSync.Timing.LATE:
 			print("late")
 	
@@ -33,6 +36,9 @@ func secondary_fire() -> void:
 			bullet_container.add_child(new_bullet)
 			new_bullet.global_position = global_position
 			new_bullet.direction = global_position.direction_to(get_global_mouse_position())
+			$picktol_sprite.play("flick")
+			$picktol_sprite.set_frame(0)
+			$Flick.play()
 		BeatSync.Timing.LATE:
 			print("late")
 	
