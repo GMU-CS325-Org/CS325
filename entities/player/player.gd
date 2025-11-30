@@ -78,7 +78,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_death() -> void:
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://ui/death_scene.tscn")
 
 func animating():
 	if velocity.x > 0:
