@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://48qgjeavte52"]
+[gd_scene load_steps=5 format=3 uid="uid://48qgjeavte52"]
 
 [ext_resource type="Script" uid="uid://byjcgmrl6r1re" path="res://ui/main_menu.gd" id="1_0dkrt"]
 [ext_resource type="SpriteFrames" uid="uid://ee4n38hmp1lb" path="res://sprites/logo/logo_frames.tres" id="2_0dkrt"]
+[ext_resource type="Texture2D" uid="uid://badwhv66wy26c" path="res://sprites/picktol/flick_0001.png" id="3_rmr83"]
+[ext_resource type="Texture2D" uid="uid://qcfkb45prt55" path="res://sprites/triangle/tri_0001.png" id="4_8uxxo"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -126,6 +128,71 @@ text = "Exit Game"
 position = Vector2(558, 160)
 sprite_frames = ExtResource("2_0dkrt")
 animation = &"60 bpm"
+
+[node name="Badges" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.217042
+anchor_top = 0.617
+anchor_right = 0.264
+anchor_bottom = 0.777667
+offset_left = -0.0320129
+offset_top = 0.18396
+offset_right = -0.127991
+offset_bottom = 0.0719604
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Stage1" type="HBoxContainer" parent="Badges"]
+layout_mode = 2
+
+[node name="Picktol" type="TextureRect" parent="Badges/Stage1"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 30)
+layout_mode = 2
+texture = ExtResource("3_rmr83")
+expand_mode = 1
+
+[node name="Triangle" type="TextureRect" parent="Badges/Stage1"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 30)
+layout_mode = 2
+texture = ExtResource("4_8uxxo")
+expand_mode = 1
+
+[node name="Stage2" type="HBoxContainer" parent="Badges"]
+layout_mode = 2
+
+[node name="Picktol" type="TextureRect" parent="Badges/Stage2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 30)
+layout_mode = 2
+texture = ExtResource("3_rmr83")
+expand_mode = 1
+
+[node name="Triangle" type="TextureRect" parent="Badges/Stage2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 30)
+layout_mode = 2
+texture = ExtResource("4_8uxxo")
+expand_mode = 1
+
+[node name="Stage3" type="HBoxContainer" parent="Badges"]
+layout_mode = 2
+
+[node name="Picktol" type="TextureRect" parent="Badges/Stage3"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 30)
+layout_mode = 2
+texture = ExtResource("3_rmr83")
+expand_mode = 1
+
+[node name="Triangle" type="TextureRect" parent="Badges/Stage3"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 30)
+layout_mode = 2
+texture = ExtResource("4_8uxxo")
+expand_mode = 1
 
 [connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_timing_offset_change"]
 [connection signal="button_down" from="VBoxContainer/TestButton" to="." method="_on_test_button_pressed"]

@@ -2,6 +2,8 @@ extends Control
 
 
 func _ready() -> void:
+	GameSettings.completions |= GameSettings.current_stage
+	Save.save()
 	BeatSync.play(load("res://level/level_data/main_menu.tres"))
 
 func _on_button_pressed() -> void:

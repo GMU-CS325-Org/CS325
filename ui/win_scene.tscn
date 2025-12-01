@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://btevh8aaa0ugb" path="res://ui/win_scene.gd" id="1_65a6e"]
 [ext_resource type="Texture2D" uid="uid://dtcml0atgj7np" path="res://sprites/player/idle_blue_0001.png" id="2_65a6e"]
 
-[node name="DeathScene" type="Control"]
+[node name="WinScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
