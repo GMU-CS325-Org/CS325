@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://48qgjeavte52"]
+[gd_scene load_steps=3 format=3 uid="uid://bk50ne44e3d73"]
 
 [ext_resource type="Script" uid="uid://byjcgmrl6r1re" path="res://ui/main_menu.gd" id="1_0dkrt"]
 [ext_resource type="SpriteFrames" uid="uid://ee4n38hmp1lb" path="res://sprites/logo/logo_frames.tres" id="2_0dkrt"]
@@ -57,7 +57,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -266.0
-offset_top = -358.0
+offset_top = -408.0
 offset_right = 266.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -114,6 +114,10 @@ popup/item_0/id = 0
 popup/item_1/text = "Difficulty: Easy (Heal 1 HP on phase change)"
 popup/item_1/id = 1
 
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
 [node name="Exit Game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Exit Game"
@@ -130,4 +134,5 @@ animation = &"60 bpm"
 [connection signal="pressed" from="VBoxContainer/Stage3" to="." method="_on_stage_3_pressed"]
 [connection signal="pressed" from="VBoxContainer/Weapon Select" to="." method="_on_weapon_select_pressed"]
 [connection signal="item_selected" from="VBoxContainer/Difficulty" to="." method="_on_difficulty_item_selected"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit Game" to="." method="_on_exit_game_pressed"]

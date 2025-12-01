@@ -5,6 +5,8 @@ var selected_weapon : bool = false #false is picktol, true is triangle
 func _ready() -> void:
 	$AnimatedSprite2D.play()
 	update_timing_offset()
+	
+	# Update stage button text with boss names
 	$VBoxContainer/Stage1.text = "Stage 1: Trumphanta"
 	$VBoxContainer/Stage2.text = "Stage 2: Paed Piper"
 	$VBoxContainer/Stage3.text = "Stage 3: John"
@@ -70,3 +72,7 @@ func _on_test_button_pressed() -> void:
 
 func _on_difficulty_item_selected(index: int) -> void:
 	GameSettings.difficulty = index
+
+func _on_credits_pressed() -> void:
+	get_tree().change_scene_to_file("res://ui/credits.tscn")
+
