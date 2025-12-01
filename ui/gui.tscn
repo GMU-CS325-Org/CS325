@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfnak40ghoqkc"]
+
+[ext_resource type="Script" uid="uid://bq2gcn2iis0mb" path="res://ui/gui.gd" id="1_3f2kh"]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_3f2kh")
+
+[node name="BossHealth" type="ProgressBar" parent="."]
+modulate = Color(0.372549, 0, 0.54902, 1)
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+value = 50.0
+show_percentage = false
+
+[node name="PlayerHealth" type="ProgressBar" parent="."]
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 50.0
+show_percentage = false

@@ -57,7 +57,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -266.0
-offset_top = -309.0
+offset_top = -358.0
 offset_right = 266.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -100,7 +100,19 @@ text = "Stage 3"
 
 [node name="Weapon Select" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Wapon: Picktol"
+
+[node name="Difficulty" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Difficulty: Normal"
+popup/item_0/id = 0
+popup/item_1/text = "Difficulty: Easy (Heal 1 HP on phase change)"
+popup/item_1/id = 1
 
 [node name="Exit Game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -117,4 +129,5 @@ animation = &"60 bpm"
 [connection signal="pressed" from="VBoxContainer/Stage2" to="." method="_on_stage_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Stage3" to="." method="_on_stage_3_pressed"]
 [connection signal="pressed" from="VBoxContainer/Weapon Select" to="." method="_on_weapon_select_pressed"]
+[connection signal="item_selected" from="VBoxContainer/Difficulty" to="." method="_on_difficulty_item_selected"]
 [connection signal="pressed" from="VBoxContainer/Exit Game" to="." method="_on_exit_game_pressed"]

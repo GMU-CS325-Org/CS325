@@ -10,3 +10,10 @@ func _ready() -> void:
 	print("startin")
 	BeatSync.play(load(stage))
 	$Player/ticker.speed_scale *= BeatSync.get_bpm() / 60
+	$GUI.set_enemy_max_hp($enemy/HealthComponent.max_health)
+	$GUI.update_enemy_health($enemy/HealthComponent.max_health)
+	$enemy/HealthComponent.damaged.connect($GUI.update_enemy_health)
+	$enemy/HealthComponent.killed.connect(win)
+
+func win() -> void:
+	get_tree().change_scene_to_file("res://ui/win_scene.tscn")

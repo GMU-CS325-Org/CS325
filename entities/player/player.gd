@@ -11,6 +11,7 @@ static var instance : Player
 var boost_time : float = -1;
 var color : DamageComponent.DamageColor
 var current_body : AnimatedSprite2D
+@onready var health : HealthComponent = $HealthComponent
 
 #func _input(event: InputEvent) -> void:
 	#if event.is_action_pressed("boost") and boost_time < 0:
