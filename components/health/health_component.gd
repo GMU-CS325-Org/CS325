@@ -13,6 +13,8 @@ func _ready() -> void:
 	health = max_health
 
 func hurt(amount : int) -> void:
+	if health <= 0:
+		return
 	if (player_i_frames):
 		return
 	health-=amount

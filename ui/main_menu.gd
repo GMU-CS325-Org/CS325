@@ -38,23 +38,23 @@ func _on_weapon_select_pressed() -> void:
 
 func _on_stage_1_pressed() -> void:
 	if (selected_weapon):
-		get_tree().change_scene_to_file("res://level/stages/triangle/stage_one_triangle.tscn")
+		SceneSwitch.change_scene_to_file("res://level/stages/triangle/stage_one_triangle.tscn")
 	else:
-		get_tree().change_scene_to_file("res://level/stages/picktol/stage_one_picktol.tscn")
+		SceneSwitch.change_scene_to_file("res://level/stages/picktol/stage_one_picktol.tscn")
 
 
 func _on_stage_2_pressed() -> void:
 	if (selected_weapon):
-		get_tree().change_scene_to_file("res://level/stages/triangle/stage_two_triangle.tscn")
+		SceneSwitch.change_scene_to_file("res://level/stages/triangle/stage_two_triangle.tscn")
 	else:
-		get_tree().change_scene_to_file("res://level/stages/picktol/stage_two_picktol.tscn")
+		SceneSwitch.change_scene_to_file("res://level/stages/picktol/stage_two_picktol.tscn")
 
 
 func _on_stage_3_pressed() -> void:
 	if (selected_weapon):
-		get_tree().change_scene_to_file("res://level/stages/triangle/stage_three_triangle.tscn")
+		SceneSwitch.change_scene_to_file("res://level/stages/triangle/stage_three_triangle.tscn")
 	else:
-		get_tree().change_scene_to_file("res://level/stages/picktol/stage_three_picktol.tscn")
+		SceneSwitch.change_scene_to_file("res://level/stages/picktol/stage_three_picktol.tscn")
 
 
 func _on_timing_offset_change(value: float) -> void:
@@ -74,4 +74,4 @@ func _on_difficulty_item_selected(index: int) -> void:
 	GameSettings.difficulty = index
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file("res://ui/credits.tscn")
+	SceneSwitch.change_scene_to_file("res://ui/credits.tscn")

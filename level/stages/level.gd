@@ -22,7 +22,7 @@ func _ready() -> void:
 	$Player/PlayerWeapons.selected_gun = $Player/PlayerWeapons.guns[player_weapon]
 	$Player/PlayerWeapons.hide_unselected()
 	print("startin")
-	BeatSync.play(load(stage))
+	
 	$Player/ticker.speed_scale *= BeatSync.get_bpm() / 60
 	$GUI.set_enemy_max_hp($enemy/HealthComponent.max_health)
 	$GUI.update_enemy_health($enemy/HealthComponent.max_health)
@@ -31,7 +31,9 @@ func _ready() -> void:
 	
 	# Connect to player damage to trigger shake
 	Player.instance.health.damaged.connect(_on_player_damaged)
-
+	BeatSync.play(load(stage))
+	print("aaaa")
+	
 func _on_player_damaged(_hp: int) -> void:
 	shake_amount = 15.0  # Shake intensity
 
@@ -47,4 +49,4 @@ func _process(delta: float) -> void:
 		camera.offset = Vector2.ZERO
 
 func win() -> void:
-	get_tree().change_scene_to_file("res://ui/win_scene.tscn")
+	SceneSwitch.change_scene_to_file("res://ui/win_scene.tscn")

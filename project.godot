@@ -13,11 +13,12 @@ config_version=5
 config/name="CS325"
 run/main_scene="uid://48qgjeavte52"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dnhhgr7ukfhtg"
 
 [autoload]
 
 BeatSync="*res://level/music/beat_sync/beat_sync.tscn"
+SceneSwitch="*res://ui/scene_switch.tscn"
 
 [display]
 
