@@ -32,3 +32,17 @@ func raycast_shoot(shoot_dir : Vector2, damage_component : DamageComponent) -> v
 	var collision = raycast.get_collider()
 	if collision is HurtboxComponent:
 		collision.hit(damage_component)
+		
+	
+	var line : Line2D = $Visual
+	line.clear_points()
+	line.add_point(Vector2.ZERO)
+	if raycast.is_colliding():
+		line.add_point(raycast.get_collision_point()-global_position)
+		print(raycast.get_collision_point()-global_position)
+	else:
+		line.add_point(raycast.target_position)
+	var tree : SceneTree = get_tree()
+	if tree != null:
+		await tree.create_timer(0.1).timeout
+		line.clear_points()
