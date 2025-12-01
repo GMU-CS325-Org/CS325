@@ -54,7 +54,7 @@ func _on_stage_3_pressed() -> void:
 
 func _on_timing_offset_change(value: float) -> void:
 	update_timing_offset()
-	
+
 func _on_test_button_pressed() -> void:
 	match BeatSync.get_timing(BeatSync.Note.QUARTER):
 		BeatSync.Timing.EARLY:
@@ -63,3 +63,7 @@ func _on_test_button_pressed() -> void:
 			$VBoxContainer/Feedback.text = "Good!"
 		_:
 			$VBoxContainer/Feedback.text = "Late"
+
+
+func _on_difficulty_item_selected(index: int) -> void:
+	GameSettings.difficulty = index

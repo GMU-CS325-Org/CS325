@@ -17,6 +17,8 @@ func inc(hp : int):
 	if (hp < thresholds[pattern_inc]):
 		pattern_inc += 1
 		curr_pattern.queue_free()
+		if GameSettings.difficulty == 1:
+			Player.instance.health.heal(1)
 		curr_pattern = null
 		if (pattern_inc > thresholds.size() - 1): #prevents grabbing a null index when final pattern is done
 			return

@@ -36,5 +36,5 @@ func on_hit() -> void:
 		else:
 			assert(false,"invalid collision")
 	
-	await get_tree().create_timer(0.1).timeout
+	#await get_tree().create_timer(0.1).timeout
 	queue_free()

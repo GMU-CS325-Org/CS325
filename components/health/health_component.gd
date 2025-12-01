@@ -1,7 +1,7 @@
 class_name HealthComponent extends Node
 
 signal killed
-signal damaged
+signal damaged(amount : int)
 
 @export var max_health : int
 
@@ -30,3 +30,4 @@ func hurt(amount : int) -> void:
 
 func heal(amount : int) -> void:
 	health = clampi(health+amount,0,max_health)
+	damaged.emit(health)

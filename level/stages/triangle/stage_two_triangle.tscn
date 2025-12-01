@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dkftu8bsd61ya"]
+[gd_scene load_steps=18 format=3 uid="uid://dkftu8bsd61ya"]
 
 [ext_resource type="Script" uid="uid://dhtukj50i3x2w" path="res://level/stages/level.gd" id="1_efb5a"]
 [ext_resource type="Script" uid="uid://bumudl2byvexc" path="res://bullet_container.gd" id="2_742mv"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://ljehq8j0s5fd" path="res://level/attacks/stage 2/leaves_in_the_wind.tscn" id="10_bbqq3"]
 [ext_resource type="PackedScene" uid="uid://dydiij8ujl4nc" path="res://level/attacks/stage 2/rat_wall.tscn" id="11_c7hxn"]
 [ext_resource type="PackedScene" uid="uid://b8d6v0udh63ng" path="res://level/attacks/stage 2/Ratatatat.tscn" id="12_q0iea"]
+[ext_resource type="PackedScene" uid="uid://dwi6w0njbm1t3" path="res://level/stages/picktol/stage_one_picktol.tscn" id="13_qwlqe"]
+[ext_resource type="PackedScene" uid="uid://cfnak40ghoqkc" path="res://ui/gui.tscn" id="14_3sfhm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2nij2"]
 
@@ -73,5 +75,9 @@ shape = SubResource("RectangleShape2D_7cbxl")
 script = ExtResource("6_s5onx")
 patterns = Array[PackedScene]([ExtResource("7_x6tlq"), ExtResource("8_jmr1k"), ExtResource("9_3q4v7"), ExtResource("10_bbqq3"), ExtResource("11_c7hxn"), ExtResource("12_q0iea")])
 thresholds = Array[int]([190, 150, 110, 70, 50, 0])
+
+[node name="stage_one" parent="." instance=ExtResource("13_qwlqe")]
+
+[node name="GUI" parent="." instance=ExtResource("14_3sfhm")]
 
 [editable path="enemy"]
