@@ -5,6 +5,9 @@ var selected_weapon : bool = false #false is picktol, true is triangle
 func _ready() -> void:
 	$AnimatedSprite2D.play()
 	update_timing_offset()
+	$VBoxContainer/Stage1.text = "Stage 1: Trumphanta"
+	$VBoxContainer/Stage2.text = "Stage 2: Paed Piper"
+	$VBoxContainer/Stage3.text = "Stage 3: John"
 	
 	BeatSync.play(load("res://level/level_data/main_menu.tres"))
 
