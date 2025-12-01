@@ -40,6 +40,8 @@ volume_db = -20.0
 stream = ExtResource("7_hxmqr")
 volume_db = -20.0
 
+[node name="Visual" type="Line2D" parent="Picktol"]
+
 [node name="Triangle" type="Node2D" parent="."]
 script = ExtResource("3_sju1t")
 
@@ -59,3 +61,5 @@ animation = &"firing"
 
 [node name="Tri Fire" type="AudioStreamPlayer" parent="Triangle"]
 stream = ExtResource("8_mb3cx")
+
+[node name="Visual" type="Line2D" parent="Triangle"]
